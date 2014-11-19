@@ -1,0 +1,7 @@
+%p
+  = message.created_at
+  = surround '(', ')' do
+    = message.name
+  %strong= link_to message.email, "mailto:#{message.email}?subject='#{truncate(message.message_text, length: 120).html_safe}'"
+%hr
+  = message.message_text

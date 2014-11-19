@@ -7,18 +7,19 @@
     = csrf_meta_tags
   %body
     .row.panel
-      .large-12.medium-12.small-12.columns.panel.text-center
+      .large-12.medium-12.small-12.columns.text-center
         %ul.side-nav.inline-list
-          %li= link_to 'Dashboard', '#'
-          %li= link_to 'Cats', '#'
-          %li= link_to 'Messages', '#'
+          %li.dashboard= link_to 'Dashboard', '#'
+          %li.cats= link_to 'Cats', '#'
+          %li.messages= link_to 'Messages', '#'
 
-    .row.panel
-      .large-3.medium-3.small-3.columns.panel
-        %ul.side-nav= yield :main_menu
+    .row
+      .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2
+        %p.notice= notice
+        %p.alert= alert
 
-      .large-9.medium-9.small-9.columns.panel
-        = yield
+
+    = yield
 
     .row.panel.footer
       %ul.side-nav.inline-list= yield :main_menu

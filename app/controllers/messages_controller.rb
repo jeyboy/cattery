@@ -1,25 +1,29 @@
 class MessagesController < ApplicationController
+  include ActionView::Helpers::SanitizeHelper
+
+  before_filter -> {
+    params[:message].slice('name', 'email', 'message_text').each_pair do |k, v|
+      params[:message][k] = strip_tags(v)
+    end
+  }, only: [:create]
 
   def index
-    @messages = Message.all
+    @messages = Message.paginate(page: params[:page])
   end
 
   def create
     @message = Message.new(message_params)
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    if @message.save
+      redirect_to @message, notice: 'Message was successfully created.'
+    else
+      render :new
     end
   end
 
-  private
-    def message_params
-      params[:message]
-    end
+private
+  def message_params
+    params.require(:message).permit(:name, :email, :message_text)
+    # params[:message]
+  end
 end
