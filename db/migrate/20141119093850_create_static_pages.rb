@@ -6,5 +6,7 @@ class CreateStaticPages < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :static_pages, :name, unique: true
   end
 end

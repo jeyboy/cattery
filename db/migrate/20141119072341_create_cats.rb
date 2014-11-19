@@ -2,13 +2,13 @@ class CreateCats < ActiveRecord::Migration
   def change
     create_table :cats do |t|
       t.integer :breed_id, null: false
-      t.string :color
+      t.string :color_id
       t.string :breeder
       t.string :owner
-      t.string :name
+      t.string :name, null: false
 
-      t.boolean :is_cat
-      t.boolean :is_kitty
+      t.boolean :is_cat, null: false
+      t.boolean :is_kitty, default: false
 
       t.integer :mother_id
       t.integer :father_id
