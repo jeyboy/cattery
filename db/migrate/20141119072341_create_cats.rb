@@ -7,7 +7,8 @@ class CreateCats < ActiveRecord::Migration
       t.string :owner
       t.string :name
 
-      t.boolean :gender
+      t.boolean :is_cat
+      t.boolean :is_kitty
 
       t.integer :mother_id
       t.integer :father_id
