@@ -1,12 +1,19 @@
-class Admin::CatsController < Admin::AdminController
-  before_filter :set_cat, only: [:show]
+class Admin::MessagesController < Admin::AdminController
+  before_filter :set_message, only: [:show, :destroy]
 
   def index
-    @cats = Cat.all
+    @messages = Message.all
   end
 
   def show;  end
 
+  def destroy
+    @cat.destroy
+    respond_to do |format|
+      format.html { redirect_to cats_url, notice: 'Cat was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   #
   # # GET /cats/new
@@ -59,7 +66,7 @@ class Admin::CatsController < Admin::AdminController
   # end
 
 private
-  def set_cat
-    @cat = Cat.where(id: params[:id]).first
+  def set_message
+    @message = Message.where(id: params[:id]).first
   end
 end

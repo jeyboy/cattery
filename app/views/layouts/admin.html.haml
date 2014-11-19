@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Cattery
+    = stylesheet_link_tag    'admin', media: 'all'
+    = javascript_include_tag 'admin'
+    = csrf_meta_tags
+  %body
+    .row.panel
+      .large-12.medium-12.small-12.columns.panel.text-center
+        %ul.side-nav.inline-list
+          %li= link_to 'Dashboard', '#'
+          %li= link_to 'Cats', '#'
+          %li= link_to 'Messages', '#'
+
+    .row.panel
+      .large-3.medium-3.small-3.columns.panel
+        %ul.side-nav= yield :main_menu
+
+      .large-9.medium-9.small-9.columns.panel
+        = yield
+
+    .row.panel.footer
+      %ul.side-nav.inline-list= yield :main_menu
+
+    :javascript
+      $(document).foundation();
