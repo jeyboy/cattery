@@ -2,7 +2,7 @@
   %li.title= cat.name
 
   %li.bullet-item
-    = image_tag((cat.cat_picts.first.pict.url rescue 'def_cat.png'))
+    = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
 
   -#%li.price $99.99
   - if cat.title

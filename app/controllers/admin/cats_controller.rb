@@ -57,6 +57,6 @@ private
     params.require(:cat).permit(
         :breed_id, :color_id, :title_id, :breeder, :owner,
         :name, :is_cat, :mother_id, :father_id, :birthday,
-        cat_picts_attributes: [:pict, :pict_cache, :_destroy])
+        cat_picts_attributes: [:pict, :pict_cache, :_destroy, :main])
   end
 end

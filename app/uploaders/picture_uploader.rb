@@ -10,6 +10,13 @@ class PictureUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
+  class << self
+    def default_pict
+      'def_cat_small.png'
+    end
+  end
+
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -18,7 +25,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    ActionController::Base.helpers.asset_path('def_cat.png')
+    ActionController::Base.helpers.asset_path(PictureUploader::default_pict)
     # ActionController::Base.helpers.asset_path([version_name, 'def_cat.png'].compact.join('_'))
 
     # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
