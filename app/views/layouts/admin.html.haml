@@ -48,11 +48,7 @@
             %li.dashboard=  link_to 'Dashboard', [:admin, :dashboard]
             %li.messages=   link_to 'Messages', [:admin, :messages]
 
-    .row
-      .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2
-        %p.notice= notice
-        %p.alert= alert
-
+    = render 'layouts/flashes'
 
     = yield
 
