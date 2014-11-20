@@ -4,5 +4,7 @@
  *= require ./foundation/foundation.min
  *= require ./foundation/normalize
 
+ *= require ./flashes
+
  *= require_self
  */
