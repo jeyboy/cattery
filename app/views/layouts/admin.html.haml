@@ -17,36 +17,9 @@
 
         %section.top-bar-section
           / Right Nav Section
-          %ul.right
-            %li.cats.has-dropdown
-              = link_to 'Cats', '#'
-              %ul.dropdown
-                %li.new=    link_to 'New Cat', [:new, :admin, :cat]
-                %li.index=  link_to 'Cats List', [:admin, :cats]
-
-            %li.titles.has-dropdown
-              = link_to 'Titles', '#'
-              %ul.dropdown
-                %li.new=    link_to 'New Title', [:new, :admin, :title]
-                %li.index=  link_to 'Titles List', [:admin, :titles]
-
-
-            %li.colors.has-dropdown
-              = link_to 'Colors', '#'
-              %ul.dropdown
-                %li.new=    link_to 'New Color', [:new, :admin, :color]
-                %li.index=  link_to 'Colors List', [:admin, :colors]
-
-            %li.breeds.has-dropdown
-              = link_to 'Breed', '#'
-              %ul.dropdown
-                %li.new=    link_to 'New Breed', [:new, :admin, :breed]
-                %li.index=  link_to 'Breeds List', [:admin, :breeds]
-
+          %ul.right= render 'layouts/admin/menu_right_part'
           / Left Nav Section
-          %ul.left
-            %li.dashboard=  link_to 'Dashboard', [:admin, :dashboard]
-            %li.messages=   link_to 'Messages', [:admin, :messages]
+          %ul.left= render 'layouts/admin/menu_left_part'
 
     = render 'layouts/flashes'
 

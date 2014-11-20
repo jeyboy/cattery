@@ -7,7 +7,7 @@
     = csrf_meta_tags
   %body
     = content_for :main_menu do
-      = render partial: 'layouts/menu'
+      = render partial: 'layouts/application/menu'
 
     .fixed.show-for-small-only
       %nav.top-bar{'data-topbar' => '', role: 'navigation'}
