@@ -3,4 +3,4 @@
     = f.text_field :name, placeholder: 'Name..'
 
   = render layout: 'shared/form_field', locals: {f: f, name: :body, text: 'Body'} do
-    = f.text_area :body, placeholder: 'Page body..', rows: 10
+    = f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'ckeditor'

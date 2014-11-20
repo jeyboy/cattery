@@ -1,4 +1,5 @@
 .row
   .large-12.medium-12.small-12.columns
-    = render partial: 'messages/message', collection: @messages, locals: {show_controls: true}
+    %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+      = render partial: 'messages/message', collection: @messages, locals: {show_controls: true}
     = render 'shared/pagination', objects: @messages
