@@ -1,0 +1,22 @@
+.flashes {
+  padding: 10px 0;
+}
+
+.notice {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color: indianred;
+}
+
+
+ul, li {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+//.no-border {
+//  border: none !important;
+//}
