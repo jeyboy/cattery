@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   include ActionView::Helpers::SanitizeHelper
 
   before_filter -> {
-    params[:message].slice('name', 'email', 'message_text').each_pair do |k, v|
+    params[:message].slice('name', 'email').each_pair do |k, v|
       params[:message][k] = strip_tags(v)
     end
   }, only: [:create]

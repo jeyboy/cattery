@@ -4,7 +4,4 @@
 
   = yield f
 
-  %hr
-  .row.actions
-    .large-12.medium-12.small-12.columns
-      = f.button class: 'button radius'
+  = render partial: 'shared/form_submit', locals: {f: f}
