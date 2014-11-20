@@ -2,7 +2,11 @@ class CatsController < ApplicationController
   before_action :set_cat, only: [:show]
 
   def index
-    @cats = Cat.all
+    @cats = if params.has_key?(:is_kitty)
+              Cat.where('cats.birthday > ?', 6.months.ago)
+            elsif params.has_key?(:is_cat)
+              Cat.where(is_cat: params[:is_cat])
+            end || Cat
   end
 
   def show

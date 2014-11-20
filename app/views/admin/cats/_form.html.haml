@@ -1,0 +1,5 @@
+= form_for(@cat || Cat.new) do |f|
+  = render 'shared/errors', object: f.object
+
+  .actions
+    = f.submit

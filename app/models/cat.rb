@@ -1,6 +1,7 @@
 class Cat < ActiveRecord::Base
   belongs_to :breed
   belongs_to :color
+  belongs_to :title
 
   belongs_to :father, class_name: 'Cat', foreign_key: 'father_id'
   belongs_to :mother, class_name: 'Cat', foreign_key: 'mother_id'
