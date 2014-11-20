@@ -1,2 +1,3 @@
-= render partial: 'admin/titles/title', collection: @titles
+= render layout: 'shared/index_layout' do
+  = render partial: 'admin/titles/title', collection: @titles
 = render 'shared/pagination', objects: @titles

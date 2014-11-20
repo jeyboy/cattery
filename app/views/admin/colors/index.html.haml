@@ -1,2 +1,3 @@
-= render partial: 'admin/colors/color', collection: @colors
+= render layout: 'shared/index_layout' do
+  = render partial: 'admin/colors/color', collection: @colors
 = render 'shared/pagination', objects: @colors
