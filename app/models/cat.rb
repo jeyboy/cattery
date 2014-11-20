@@ -8,7 +8,7 @@ class Cat < ActiveRecord::Base
 
   has_many :cat_picts, dependent: :destroy
 
-  accepts_nested_attributes_for :cat_picts, reject_if: ->(attributes) { attributes['pict'].blank? }
+  accepts_nested_attributes_for :cat_picts, allow_destroy: true, reject_if: ->(attributes) { attributes['pict'].blank? }
 
   scope :children, ->(cat) { where("#{cat.is_cat ? 'father_id' : 'mother_id'} = ?", cat.id)}
 
