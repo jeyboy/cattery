@@ -10,7 +10,7 @@ class Admin::ColorsController < Admin::AdminController
   def edit;  end
 
   def create
-    @color = Color.new(breed_params)
+    @color = Color.new(color_params)
     if @color.save
       redirect_to @color, notice: 'Color was successfully created.'
     else
@@ -19,7 +19,7 @@ class Admin::ColorsController < Admin::AdminController
   end
 
   def update
-    if @color.update(breed_params)
+    if @color.update(color_params)
       redirect_to @color, notice: 'Color was successfully updated.'
     else
       render :edit
@@ -32,11 +32,11 @@ class Admin::ColorsController < Admin::AdminController
   end
 
 private
-  def set_breed
+  def set_color
     @color = Color.where(id: params[:id]).first
   end
 
-  def breed_params
+  def color_params
     params.require(:color).permit(:name)
   end
 end

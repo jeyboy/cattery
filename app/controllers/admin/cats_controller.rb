@@ -2,7 +2,7 @@ class Admin::CatsController < Admin::AdminController
   before_filter :set_cat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cats = Cat.all
+    @cats = Cat.paginate(page: params[:page])
   end
 
   def show;  end

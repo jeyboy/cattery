@@ -10,7 +10,7 @@ class Admin::TitlesController < Admin::AdminController
   def edit;  end
 
   def create
-    @title = Title.new(breed_params)
+    @title = Title.new(title_params)
     if @title.save
       redirect_to @title, notice: 'Title was successfully created.'
     else
@@ -19,7 +19,7 @@ class Admin::TitlesController < Admin::AdminController
   end
 
   def update
-    if @title.update(breed_params)
+    if @title.update(title_params)
       redirect_to @title, notice: 'Title was successfully updated.'
     else
       render :edit
@@ -32,11 +32,11 @@ class Admin::TitlesController < Admin::AdminController
   end
 
 private
-  def set_breed
+  def set_title
     @title = Title.where(id: params[:id]).first
   end
 
-  def breed_params
+  def title_params
     params.require(:title).permit(:name)
   end
 end

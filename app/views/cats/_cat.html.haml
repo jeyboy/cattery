@@ -1,7 +1,7 @@
 %ul.pricing-table
   - if show_controls
     %li.title.text-center
-      = render 'cats/cat_header', cat: cat
+      = render 'shared/control_header', object: cat, text: cat.name
   - else
     %li.title.text-breaker= cat.name
 

@@ -1,3 +1,4 @@
 .row.panel
   .large-12.medium-12.small-12.columns
     - render @messages
+    = render 'shared/pagination', objects: @messages
