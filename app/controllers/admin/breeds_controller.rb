@@ -2,7 +2,7 @@ class Admin::BreedsController < Admin::AdminController
   before_filter :set_breed, only: [:edit, :update, :destroy]
 
   def index
-    @breeds = Breed.paginate(page: params[:page])
+    @breeds = Breed.order('created_at DESC').paginate(page: params[:page])
   end
 
   def new

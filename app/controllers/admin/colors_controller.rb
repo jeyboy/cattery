@@ -2,7 +2,7 @@ class Admin::ColorsController < Admin::AdminController
   before_filter :set_color, only: [:edit, :update, :destroy]
 
   def index
-    @colors = Color.paginate(page: params[:page])
+    @colors = Color.order('created_at DESC').paginate(page: params[:page])
   end
 
   def new

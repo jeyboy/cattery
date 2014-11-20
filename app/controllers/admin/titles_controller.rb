@@ -2,7 +2,7 @@ class Admin::TitlesController < Admin::AdminController
   before_filter :set_title, only: [:edit, :update, :destroy]
 
   def index
-    @titles = Title.paginate(page: params[:page])
+    @titles = Title.order('created_at DESC').paginate(page: params[:page])
   end
 
   def new
