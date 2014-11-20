@@ -2,6 +2,6 @@
 
 %br
 
-= render layout: 'shared/index_layout' do
+= render layout: 'shared/index_layout', locals: {classes: 'messages'} do
   = render @messages
 = render 'shared/pagination', objects: @messages

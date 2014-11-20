@@ -7,23 +7,18 @@ class MessagesController < ApplicationController
     end
   }, only: [:create]
 
+  respond_to :js, only: [:create]
+
   def index
     @messages = Message.paginate(page: params[:page], per_page: pagination_pre_page)
   end
 
   def create
-    @message = Message.new(message_params)
-
-    if @message.save
-      redirect_to @message, notice: 'Message was successfully created.'
-    else
-      render :new
-    end
+    @message = Message.create(message_params)
   end
 
 private
   def message_params
     params.require(:message).permit(:name, :email, :message_text)
-    # params[:message]
   end
 end

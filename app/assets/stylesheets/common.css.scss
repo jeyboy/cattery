@@ -11,10 +11,14 @@
 }
 
 
-ul, li {
+ul, li, .round-bordered {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
+}
+
+.round-bordered {
+  border: solid 1px black;
 }
 
 //.no-border {
