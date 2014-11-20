@@ -5,9 +5,10 @@
 = content_for :control_title, flush: true do
   = text
 
-= content_for :control_delete_button, flush: true do
-  = link_to [:admin, object], method: :delete, data: {confirm: 'Are you sure what you want to delete this object ?'} do
-    = image_tag 'delete-icon-small.png'
+- unless local_assigns.has_key?(:no_delete_button)
+  = content_for :control_delete_button, flush: true do
+    = link_to [:admin, object], method: :delete, data: {confirm: 'Are you sure what you want to delete this object ?'} do
+      = image_tag 'delete-icon-small.png'
 
 %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3.visible-for-small-only
   %li= yield :control_edit_button

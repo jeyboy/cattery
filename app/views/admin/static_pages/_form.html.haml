@@ -1,0 +1,6 @@
+= render layout: 'shared/form_layout', locals: {object: @page} do |f|
+  = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
+    = f.text_field :name, placeholder: 'Name..'
+
+  = render layout: 'shared/form_field', locals: {f: f, name: :body, text: 'Body'} do
+    = f.text_area :body, placeholder: 'Page body..', rows: 10
