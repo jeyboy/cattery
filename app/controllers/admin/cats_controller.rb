@@ -15,7 +15,7 @@ class Admin::CatsController < Admin::AdminController
     @cat = Cat.new(cat_params)
 
     if @cat.save
-      redirect_to @cat, notice: 'Cat was successfully created.'
+      redirect_to [:admin, :cats], notice: 'Cat was successfully created.'
     else
       render :new
     end
