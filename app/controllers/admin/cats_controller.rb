@@ -1,6 +1,7 @@
 class Admin::CatsController < Admin::AdminController
   before_filter :set_cat, only: [:show, :edit, :update, :destroy]
-  before_filter -> { @parent_cats = Cat.where(is_kitty: false).where.not(id: @cat.id)}, only: [:edit, :update]
+  before_filter -> { @parent_cats = parent_cats}, only: [:new]
+  before_filter -> { @parent_cats = parent_cats.where.not(id: @cat.id)}, only: [:edit, :update]
 
   def index
     @cats = Cat.paginate(page: params[:page])
@@ -52,6 +53,10 @@ protected
   helper_method :pict_defs
 
 private
+  def parent_cats
+    @parent_cats = Cat.where(is_kitty: false)
+  end
+
   def set_cat
     @cat = Cat.where(id: params[:id]).first
   end
