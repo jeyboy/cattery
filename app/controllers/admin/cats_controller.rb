@@ -56,6 +56,7 @@ private
   def cat_params
     params.require(:cat).permit(
         :breed_id, :color_id, :title_id, :breeder, :owner,
-        :name, :is_cat, :mother_id, :father_id, :birthday)
+        :name, :is_cat, :mother_id, :father_id, :birthday,
+        cat_picts_attributes: [:pict, :pict_cache, :_destroy])
   end
 end
