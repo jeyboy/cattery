@@ -12,5 +12,5 @@ class Cat < ActiveRecord::Base
 
   scope :children, ->(cat) { where("#{cat.is_cat ? 'father_id' : 'mother_id'} = ?", cat.id)}
 
-  # validates :breed_id, :color_id, :breeder, :owner, :name, :is_cat, :is_kitty, :mother_id, :father_id, :birthday, presence: true
+  validates :breed_id, :color_id, :breeder, :owner, :name, :is_cat, :is_kitty, :mother_id, :father_id, :birthday, presence: true
 end

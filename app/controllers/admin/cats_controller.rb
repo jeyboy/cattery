@@ -23,6 +23,7 @@ class Admin::CatsController < Admin::AdminController
     if @cat.save
       redirect_to [:admin, :cats], notice: 'Cat was successfully created.'
     else
+      @parent_cats = parent_cats
       pict_defs(@cat)
       render :new
     end
