@@ -1,6 +1,8 @@
 .row
-  = label_tag name do
-    .large-3.medium-3.small-3.columns.text-center
-      %span= text
-    .large-9.medium-9.small-9.columns
-      = yield
+  .large-2.medium-2.small-2.columns.text-center
+    = label_tag name, class: 'inline right' do
+      = text
+  .large-10.medium-10.small-10.columns
+    = yield
+
+-#<form> <div class="row"> <div class="large-6 columns"> <label class="error">Error <input type="text" class="error" /> </label> <small class="error">Invalid entry</small> </div> <div class="large-6 columns error"> <label>Another Error <input type="text" /> </label> <small class="error">Invalid entry</small> </div> </div> <textarea class="error" placeholder="Message..."></textarea> <small class="error">Invalid entry</small> </form>

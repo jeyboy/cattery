@@ -6,12 +6,48 @@
     = javascript_include_tag 'admin'
     = csrf_meta_tags
   %body
-    .row.panel
-      .large-12.medium-12.small-12.columns.text-center
-        %ul.side-nav.inline-list
-          %li.dashboard= link_to 'Dashboard', '#'
-          %li.cats= link_to 'Cats', '#'
-          %li.messages= link_to 'Messages', '#'
+    .fixed
+      %nav.top-bar{'data-topbar' => '', role: 'navigation'}
+        %ul.title-area
+          %li.name
+            %h1 DuoFold
+          / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+          %li.toggle-topbar.menu-icon
+            = link_to  [:admin, :dashboard] do
+              %span Menu
+
+        %section.top-bar-section
+          / Right Nav Section
+          %ul.right
+            %li.cats.has-dropdown
+              = link_to 'Cats', '#'
+              %ul.dropdown
+                %li.new=    link_to 'New Cat', [:new, :admin, :cat]
+                %li.index=  link_to 'Cats List', [:admin, :cats]
+
+            %li.titles.has-dropdown
+              = link_to 'Titles', '#'
+              %ul.dropdown
+                %li.new=    link_to 'New Title', [:new, :admin, :title]
+                %li.index=  link_to 'Titles List', [:admin, :titles]
+
+
+            %li.colors.has-dropdown
+              = link_to 'Colors', '#'
+              %ul.dropdown
+                %li.new=    link_to 'New Color', [:new, :admin, :color]
+                %li.index=  link_to 'Colors List', [:admin, :colors]
+
+            %li.titles.has-dropdown
+              = link_to 'Breed', '#'
+              %ul.dropdown
+                %li.new=    link_to 'New Breed', [:new, :admin, :breed]
+                %li.index=  link_to 'Breeds List', [:admin, :breeds]
+
+          / Left Nav Section
+          %ul.left
+            %li.dashboard=  link_to 'Dashboard', [:admin, :dashboard]
+            %li.messages=   link_to 'Messages', [:admin, :messages]
 
     .row
       .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2

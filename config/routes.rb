@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :static_pages, except: [:destroy, :new, :create]
     resources :cats
     resources :messages
+    resources :breeds
+    resources :colors
+    resources :titles
   end
 
   resource :static_pages, only: [:show]

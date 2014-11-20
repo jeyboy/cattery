@@ -10,6 +10,7 @@ class CreateCats < ActiveRecord::Migration
       t.string :name, null: false
 
       t.boolean :is_cat, null: false
+      t.boolean :is_kitty, default: false
 
       t.integer :mother_id
       t.integer :father_id

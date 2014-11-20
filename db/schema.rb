@@ -25,13 +25,14 @@ ActiveRecord::Schema.define(version: 20141120000145) do
   add_index "breeds", ["name"], name: "index_breeds_on_name", unique: true, using: :btree
 
   create_table "cats", force: true do |t|
-    t.integer  "breed_id",   null: false
+    t.integer  "breed_id",                   null: false
     t.integer  "color_id"
     t.integer  "title_id"
     t.string   "breeder"
     t.string   "owner"
-    t.string   "name",       null: false
-    t.boolean  "is_cat",     null: false
+    t.string   "name",                       null: false
+    t.boolean  "is_cat",                     null: false
+    t.boolean  "is_kitty",   default: false
     t.integer  "mother_id"
     t.integer  "father_id"
     t.date     "birthday"

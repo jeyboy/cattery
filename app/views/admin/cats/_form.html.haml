@@ -10,6 +10,9 @@
       = render layout: 'shared/form_field', locals: {name: :is_cat, text: 'Is male gender'} do
         = f.check_box :is_cat
 
+      = render layout: 'shared/form_field', locals: {name: :is_kitty, text: 'Is a kitty'} do
+        = f.check_box :is_kitty
+
       = render layout: 'shared/form_field', locals: {name: :breeder, text: 'Breeder'} do
         = f.text_field :breeder, placeholder: 'Breeder..'
 

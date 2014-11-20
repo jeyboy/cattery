@@ -4,7 +4,5 @@
 //= require ./foundation/foundation.min
 //= require_directory ./foundation/modules
 
-//= require ./menu
-
 //= require_directory ./application
 
