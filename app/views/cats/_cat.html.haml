@@ -1,5 +1,9 @@
 %ul.pricing-table
   %li.title= cat.name
+
+  %li.bullet-item
+    = image_tag((cat.cat_picts.first.url rescue 'def_cat.png'))
+
   -#%li.price $99.99
   - if cat.title
     %li.description
@@ -27,4 +31,4 @@
       = cat.owner
 
   %li.cta-button
-    %a.round.button{href: '#'} Fotoalbum
+    %a.radius.button{href: '#'} Fotoalbum
