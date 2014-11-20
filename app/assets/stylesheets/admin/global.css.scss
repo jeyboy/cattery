@@ -1,3 +1,16 @@
 li.ico {
   padding: 4px 10px 0 4px;
 }
+
+.pricing-table .title {
+  line-height: normal !important;
+
+  .overlay {
+    padding: 5px 40px;
+    word-wrap: break-word;
+  }
+
+  div {
+    min-height: 30px;
+  }
+}

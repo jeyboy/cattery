@@ -5,4 +5,4 @@
   .row
     - group.each do |cat|
       %div{class: "large-#{class_len} medium-#{class_len} small-#{class_len} columns"}
-        = render 'cats/cat', cat: cat
+        = render 'cats/cat', cat: cat, show_controls: local_assigns[:show_controls]

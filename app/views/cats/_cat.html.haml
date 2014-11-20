@@ -1,5 +1,17 @@
 %ul.pricing-table
-  %li.title= cat.name
+  - if show_controls
+    %li.title.text-center
+      .right
+        = link_to [:admin, cat], method: :delete, prompt: 'Are you sure what you want to delete this cat ?' do
+          = image_tag 'delete-icon-small.png'
+
+      .left
+        = link_to [:admin, cat] do
+          = image_tag 'edit-icon-small.png'
+
+      .overlay= cat.name
+  - else
+    %li.title= cat.name
 
   %li.bullet-item
     = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
