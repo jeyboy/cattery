@@ -1,0 +1,8 @@
+- local_assigns[:group_len] ||= 2
+- class_len = 12 / (local_assigns[:group_len])
+
+- cats.each_slice(local_assigns[:group_len]) do |group|
+  .row
+    - group.each do |cat|
+      %div{class: "large-#{class_len} medium-#{class_len} small-#{class_len} columns"}
+        = render 'cats/cat', cat: cat
