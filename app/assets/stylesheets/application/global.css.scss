@@ -1,0 +1,16 @@
+.side-nav {
+  li.active {
+//    margin-left: 2rem;
+//    list-style-image: url(/assets/ico_small.png) !important;
+
+    background-image: url(/assets/ico_small.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+
+    a {
+      font-weight: bold !important;
+      padding-left: 40px !important;
+    }
+  }
+}
+
