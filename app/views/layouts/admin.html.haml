@@ -9,11 +9,10 @@
     .fixed
       %nav.top-bar{'data-topbar' => '', role: 'navigation'}
         %ul.title-area
-          %li.name
-            %h1 DuoFold
+          %li.ico= image_tag 'ico_small.png'
           / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
           %li.toggle-topbar.menu-icon
-            = link_to  [:admin, :dashboard] do
+            = link_to  '#' do
               %span Menu
 
         %section.top-bar-section
