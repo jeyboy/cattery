@@ -1,5 +1,6 @@
 class Admin::CatsController < Admin::AdminController
   before_filter :set_cat, only: [:show, :edit, :update, :destroy]
+  before_filter -> { @parent_cats = Cat.where(is_kitty: false).where.not(id: @cat.id)}, only: [:edit, :update]
 
   def index
     @cats = Cat.paginate(page: params[:page])
@@ -28,7 +29,7 @@ class Admin::CatsController < Admin::AdminController
 
   def update
     if @cat.update(cat_params)
-      redirect_to @cat, notice: 'Cat was successfully updated.'
+      redirect_to [:admin, :cats], notice: 'Cat was successfully updated.'
     else
       pict_defs(@cat)
       render :edit
@@ -57,8 +58,8 @@ private
 
   def cat_params
     params.require(:cat).permit(
-        :breed_id, :color_id, :title_id, :breeder, :owner,
-        :name, :is_cat, :mother_id, :father_id, :birthday,
-        cat_picts_attributes: [:pict, :pict_cache, :_destroy, :main])
+        :id, :breed_id, :color_id, :title_id, :breeder, :owner,
+        :name, :is_cat, :mother_id, :father_id, :birthday, :is_kitty,
+        cat_picts_attributes: [:id, :pict, :pict_cache, :_destroy, :main])
   end
 end

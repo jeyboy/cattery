@@ -29,10 +29,10 @@
         = f.collection_select :title_id, Title.all, :id, :name, prompt: 'Title..'
 
       = render layout: 'shared/form_field', locals: {name: :mother_id, text: 'Mother'} do
-        = f.collection_select :mother_id, Cat.where(is_cat: false, is_kitty: false).all, :id, :name, prompt: 'Mother..'
+        = f.collection_select :mother_id, @parent_cats.where(is_cat: false), :id, :name, prompt: 'Mother..'
 
       = render layout: 'shared/form_field', locals: {name: :father_id, text: 'Father'} do
-        = f.collection_select :father_id, Cat.where(is_cat: true, is_kitty: false).all, :id, :name, prompt: 'Father..'
+        = f.collection_select :father_id, @parent_cats.where(is_cat: true), :id, :name, prompt: 'Father..'
 
       = render layout: 'shared/form_field', locals: {name: :birthday, text: 'Birthday'} do
         = f.date_select :birthday, {}, class: 'large-4 medium-4 small-4 columns text-center'
