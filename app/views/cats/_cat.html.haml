@@ -1,15 +1,7 @@
 %ul.pricing-table
   - if show_controls
     %li.title.text-center
-      .right
-        = link_to [:admin, cat], method: :delete, prompt: 'Are you sure what you want to delete this cat ?' do
-          = image_tag 'delete-icon-small.png'
-
-      .left
-        = link_to [:admin, cat] do
-          = image_tag 'edit-icon-small.png'
-
-      .overlay= cat.name
+      = render 'cats/cat_header', cat: cat
   - else
     %li.title= cat.name
 
@@ -43,4 +35,4 @@
       = cat.owner
 
   %li.cta-button
-    %a.radius.button{href: '#'} Fotoalbum
+    %a.text-breaker.radius.button{href: '#'} Fotoalbum

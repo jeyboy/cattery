@@ -35,7 +35,7 @@ class Admin::CatsController < Admin::AdminController
 
   def destroy
     @cat.destroy
-    redirect_to cats_url, notice: 'Cat was successfully destroyed.'
+    redirect_to [:admin, :cats], notice: 'Cat was successfully destroyed.'
   end
 
 protected
