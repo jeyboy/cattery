@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource :dashboard, controller: 'dashboard', only: [:show]
-    resources :static_pages, except: [:destroy, :new, :create]
+    resources :static_pages, except: [:destroy, :new, :create, :show]
     resources :cats
     resources :messages
     resources :breeds
