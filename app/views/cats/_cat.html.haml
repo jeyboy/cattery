@@ -1,0 +1,30 @@
+%ul.pricing-table
+  %li.title= cat.name
+  -#%li.price $99.99
+  - if cat.title
+    %li.description
+      %strong Title:
+      = cat.title.name
+
+  - if cat.breed
+    %li.bullet-item
+      %strong Breed:
+      = cat.breed.name
+
+  - if cat.color
+    %li.bullet-item
+      %strong Color:
+      = cat.color.name
+
+  - if cat.breeder
+    %li.bullet-item
+      %strong Breeder:
+      = cat.breeder
+
+  - if cat.owner
+    %li.bullet-item
+      %strong Owner:
+      = cat.owner
+
+  %li.cta-button
+    %a.button{href: '#'} Fotoalbum

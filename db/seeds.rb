@@ -1,3 +1,51 @@
+['324', '4564', '567', 'rtet3435'].each do |color|
+  Color.create(name: color)
+end
+
+['Breed1', 'Breed2', 'Breed3', 'Breed4'].each do |breed|
+  Breed.create(name: breed)
+end
+
+['Title1', 'Title2'].each do |title|
+  Title.create(name: title)
+end
+
+@f = Cat.create(
+    breed: Breed.first,
+    color: Color.first,
+    title: Title.first,
+    breeder: 'Muchacho',
+    owner: 'Onuaro',
+    name: 'Tormozino',
+    is_cat: true,
+    birthday: 4.years.ago
+)
+
+@m = Cat.create(
+    breed: Breed.last,
+    color: Color.first,
+    title: Title.first,
+    breeder: 'Shta',
+    owner: 'Murkalo',
+    name: 'Murka',
+    is_cat: false,
+    birthday: 2.years.ago
+)
+
+Cat.create(
+    breed: Breed.last,
+    color: Color.last,
+    title: Title.last,
+    breeder: 'Shta',
+    owner: 'Pacho',
+    name: 'Prima',
+    is_cat: false,
+    is_kitty: true,
+    mother_id: @m.id,
+    father_id: @f.id,
+    birthday: 2.weeks.ago
+)
+
 User.create(email: 'a@b.com', password: '12345678', password_confirmation: '12345678')
 
 StaticPage.create(name: 'home', body: '
