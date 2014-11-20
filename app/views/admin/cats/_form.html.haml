@@ -1,7 +1,7 @@
 .row.panel
   .large-12.medium-12.small-12.columns
 
-    = form_for(@cat, url: (@cat.try(:persisted?) ? [:admin, :cat, @cat.id] : [:admin, :cats]), method: (@cat.try(:persisted?) ? 'put' : 'post')) do |f|
+    = form_for(@cat, url: (@cat.try(:persisted?) ? [:admin, @cat] : [:admin, :cats]), method: (@cat.try(:persisted?) ? 'put' : 'post')) do |f|
       = render 'shared/errors', object: f.object
 
       = render layout: 'shared/form_field', locals: {name: :name, text: 'Name'} do

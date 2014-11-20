@@ -11,7 +11,9 @@ class Admin::CatsController < Admin::AdminController
     @cat = pict_defs(Cat.new)
   end
 
-  def edit;  end
+  def edit
+    @cat = pict_defs(@cat)
+  end
 
   def create
     @cat = Cat.new(cat_params)
