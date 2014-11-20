@@ -6,7 +6,7 @@
   background-color: lightgreen;
 }
 
-.error {
+.alert {
   background-color: indianred;
 }
 
@@ -19,6 +19,12 @@ ul, li, .round-bordered {
 
 .round-bordered {
   border: solid 1px black;
+}
+
+.error {
+  input, select {
+    margin-bottom: 0 !important;
+  }
 }
 
 //.no-border {

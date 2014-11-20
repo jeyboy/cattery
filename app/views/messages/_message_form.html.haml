@@ -2,11 +2,12 @@
   .large-8.medium-10.small-12.columns.large-offset-2.medium-offset-1.text-center
     = render layout: 'shared/local_form_layout', locals: {object: message} do |f|
 
-      = render layout: 'shared/form_field', locals: {name: :email, text: 'Email'} do
+
+      = render layout: 'shared/form_field', locals: {f: f, name: :email, text: 'Email'} do
         = f.email_field :email, placeholder: 'Email..'
 
-      = render layout: 'shared/form_field', locals: {name: :name, text: 'Name'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
         = f.text_field :name, placeholder: 'Name..'
 
-      = render layout: 'shared/form_field', locals: {name: :message_text, text: 'Text'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :message_text, text: 'Text'} do
         = f.text_area :message_text, placeholder: 'Text..'

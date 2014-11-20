@@ -1,3 +1,3 @@
 = render layout: 'shared/form_layout', locals: {object: @color} do |f|
-  = render layout: 'shared/form_field', locals: {name: :name, text: 'Name'} do
+  = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
     = f.text_field :name, placeholder: 'Name..'
