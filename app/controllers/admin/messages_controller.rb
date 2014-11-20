@@ -2,7 +2,9 @@ class Admin::MessagesController < Admin::AdminController
   before_filter :set_message, only: [:show, :destroy]
 
   def index
-    @messages = Message.all
+    @messages = Message
+      .order('created_at DESC')
+      .paginate(page: params[:page], per_page: pagination_pre_page)
   end
 
   def show;  end

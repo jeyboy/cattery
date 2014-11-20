@@ -1,0 +1,7 @@
+= render 'messages/message_form', message: Message.new
+
+%br
+
+= render layout: 'shared/index_layout' do
+  = render @messages
+= render 'shared/pagination', objects: @messages

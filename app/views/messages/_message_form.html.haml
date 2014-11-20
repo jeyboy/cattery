@@ -1,0 +1,12 @@
+.row.flashes
+  .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2.text-center
+    = render layout: 'shared/form_layout', locals: {object: message} do |f|
+
+      = render layout: 'shared/form_field', locals: {name: :email, text: 'Email'} do
+        = f.email_field :email, placeholder: 'Email..'
+
+      = render layout: 'shared/form_field', locals: {name: :name, text: 'Name'} do
+        = f.text_field :name, placeholder: 'Email..'
+
+      = render layout: 'shared/form_field', locals: {name: :message_text, text: 'Text'} do
+        = f.text_area :message_text, placeholder: 'Text..'

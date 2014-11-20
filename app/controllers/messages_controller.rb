@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   }, only: [:create]
 
   def index
-    @messages = Message.paginate(page: params[:page])
+    @messages = Message.paginate(page: params[:page], per_page: pagination_pre_page)
   end
 
   def create
