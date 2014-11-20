@@ -5,14 +5,16 @@ class Admin::TitlesController < Admin::AdminController
     @titles = Title.paginate(page: params[:page])
   end
 
-  def new;  end
+  def new
+    @title = Title.new
+  end
 
   def edit;  end
 
   def create
     @title = Title.new(title_params)
     if @title.save
-      redirect_to @title, notice: 'Title was successfully created.'
+      redirect_to [:admin, :titles], notice: 'Title was successfully created.'
     else
       render :new
     end
@@ -20,7 +22,7 @@ class Admin::TitlesController < Admin::AdminController
 
   def update
     if @title.update(title_params)
-      redirect_to @title, notice: 'Title was successfully updated.'
+      redirect_to [:admin, :titles], notice: 'Title was successfully updated.'
     else
       render :edit
     end
@@ -37,6 +39,6 @@ private
   end
 
   def title_params
-    params.require(:title).permit(:name)
+    params.require(:title).permit(:id, :name)
   end
 end

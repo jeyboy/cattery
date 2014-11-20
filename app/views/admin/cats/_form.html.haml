@@ -1,9 +1,7 @@
 .row.panel
   .large-12.medium-12.small-12.columns
 
-    = form_for(@cat, url: (@cat.try(:persisted?) ? [:admin, @cat] : [:admin, :cats]), method: (@cat.try(:persisted?) ? 'put' : 'post')) do |f|
-      = render 'shared/errors', object: f.object
-
+    = render layout: 'shared/form_layout', locals: {object: @cat} do |f|
       = render layout: 'shared/form_field', locals: {name: :name, text: 'Name'} do
         = f.text_field :name, placeholder: 'Name..'
 
@@ -39,6 +37,3 @@
 
       = render layout: 'shared/form_field', locals: {name: :cat_picts, text: 'Pictures'} do
         = render 'admin/cats/picts_form', f: f
-
-      .actions
-        = f.button class: 'button radius'

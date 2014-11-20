@@ -1,0 +1,10 @@
+- persistence = object.try(:persisted?)
+= form_for(object, url: (persistence ? [:admin, object] : [:admin, object.class.name.underscore.pluralize]), method: (persistence ? 'put' : 'post')) do |f|
+  = render 'shared/errors', object: f.object
+
+  = yield f
+
+
+  .row.actions
+    .large-12.medium-12.small-12.columns
+      = f.button class: 'button radius'

@@ -5,14 +5,16 @@ class Admin::BreedsController < Admin::AdminController
     @breeds = Breed.paginate(page: params[:page])
   end
 
-  def new;  end
+  def new
+    @breed = Breed.new
+  end
 
   def edit;  end
 
   def create
     @breed = Breed.new(breed_params)
     if @breed.save
-      redirect_to @breed, notice: 'Breed was successfully created.'
+      redirect_to [:admin, :breeds], notice: 'Breed was successfully created.'
     else
       render :new
     end
@@ -20,7 +22,7 @@ class Admin::BreedsController < Admin::AdminController
 
   def update
     if @breed.update(breed_params)
-      redirect_to @breed, notice: 'Breed was successfully updated.'
+      redirect_to [:admin, :breeds], notice: 'Breed was successfully updated.'
     else
       render :edit
     end
@@ -37,6 +39,6 @@ private
   end
 
   def breed_params
-    params.require(:breed).permit(:name)
+    params.require(:breed).permit(:id, :name)
   end
 end
