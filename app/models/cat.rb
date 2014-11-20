@@ -8,6 +8,8 @@ class Cat < ActiveRecord::Base
 
   has_many :cat_picts, dependent: :destroy
 
+  accepts_nested_attributes_for :cat_picts, reject_if: :all_blank
+
   scope :children, ->(cat) { where("#{cat.is_cat ? 'father_id' : 'mother_id'} = ?", cat.id)}
 
   # validates :breed_id, :color_id, :breeder, :owner, :name, :is_cat, :is_kitty, :mother_id, :father_id, :birthday, presence: true

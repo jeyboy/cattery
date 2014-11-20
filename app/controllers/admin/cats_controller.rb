@@ -7,7 +7,9 @@ class Admin::CatsController < Admin::AdminController
 
   def show;  end
 
-  def new;  end
+  def new
+    @cat = pict_defs(Cat.new)
+  end
 
   def edit;  end
 
@@ -17,6 +19,7 @@ class Admin::CatsController < Admin::AdminController
     if @cat.save
       redirect_to [:admin, :cats], notice: 'Cat was successfully created.'
     else
+      pict_defs(@cat)
       render :new
     end
   end
@@ -25,6 +28,7 @@ class Admin::CatsController < Admin::AdminController
     if @cat.update(cat_params)
       redirect_to @cat, notice: 'Cat was successfully updated.'
     else
+      pict_defs(@cat)
       render :edit
     end
   end
@@ -33,6 +37,16 @@ class Admin::CatsController < Admin::AdminController
     @cat.destroy
     redirect_to cats_url, notice: 'Cat was successfully destroyed.'
   end
+
+protected
+  def pict_defs(obj, gen_type = 'all')
+    obj.tap do |po|
+      po.cat_picts.build(main: true) if (gen_type == 'all' || gen_type == 'master') && po.cat_picts.detect {|a| a.main}.nil?
+      po.cat_picts.build(main: false) if (gen_type == 'all' || gen_type == 'slave')
+      po.cat_picts.sort_by { |a| a.main ? 0 : 1 }
+    end
+  end
+  helper_method :pict_defs
 
 private
   def set_cat

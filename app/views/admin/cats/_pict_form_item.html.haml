@@ -1,0 +1,9 @@
+.row{class: "#{('persisted' if f.object.persisted?)} #{('main' if f.object.main)}"}
+  .large-4.medium-4.small-4.columns
+    = f.object.main ? 'Main' : 'Slave'
+  .large-7.medium-7.small-7.columns
+    = f.file_field :pict
+    = f.hidden_field :pict_cache
+  .large-1.medium-1.small-1.columns
+    = link_to 'Delete', '#', class: 'button round cat_pict_del'
+    = f.hidden_field :_destroy, value: false

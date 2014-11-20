@@ -1,0 +1,19 @@
+%hr
+#pict_block
+  :javascript
+    window.cat_pict_templates = {}
+
+  - ['master', 'slave'].each_with_index do |name, i|
+    - template_obj = pict_defs(f.object.dup, name)
+    = f.fields_for :cat_picts, template_obj.cat_picts  do |pic|
+      :javascript
+        window.cat_pict_templates["#{name}"] =  "#{j(render(partial: 'admin/cats/pict_form_item', locals: {f: pic})).gsub("[#{i}]", '[%1]').gsub("_#{i}_", '_%1_')}"
+
+  = f.fields_for :cat_picts do |cpaf|
+    = render 'admin/cats/pict_form_item', f: cpaf
+
+%hr
+.row
+  .large-8.medium-8.small-8.columns
+  .large-4.medium-4.small-4.columns
+    = link_to 'Add slave', '#', class: 'add_cat_pict button round'
