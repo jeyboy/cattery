@@ -9,10 +9,21 @@
     = content_for :main_menu do
       = render partial: 'layouts/menu'
 
-    .row
-      %ul.inline-list.right
-        %li= link_to 'Home', root_path
-        %li= link_to 'Contacts', '#'
+    .fixed.show-for-small-only
+      %nav.top-bar{'data-topbar' => '', role: 'navigation'}
+        %ul.title-area
+          %li.ico= image_tag 'ico_small.png'
+          / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+          %li.toggle-topbar.menu-icon
+            = link_to  '#' do
+              %span Menu
+
+        %section.top-bar-section
+          / Right Nav Section
+          %ul.right
+          / Left Nav Section
+          %ul.left
+            = yield :main_menu
 
     .row
       .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2
@@ -26,11 +37,12 @@
         %h2 Bla Bla Bla
       .large-4.medium-4.small-4.columns.panel.text-center
         %h1 Duo Fold
+
     .row.panel
-      .large-2.medium-2.small-2.columns.panel
+      .large-2.medium-2.small-2.columns.panel.hide-for-small-only
         %ul.side-nav= yield :main_menu
 
-      .large-10.medium-10.small-10.columns.panel
+      .large-10.medium-10.small-12.columns.panel
         = yield
 
     .row.panel.footer

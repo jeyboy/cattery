@@ -3,7 +3,7 @@
     %li.title.text-center
       = render 'cats/cat_header', cat: cat
   - else
-    %li.title= cat.name
+    %li.title.text-breaker= cat.name
 
   %li.bullet-item
     = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
