@@ -1,5 +1,5 @@
 %ul.pricing-table
-  - if show_controls
+  - if local_assigns[:show_controls]
     %li.title.text-center
       = render 'shared/control_header', object: cat, text: cat.name
   - else

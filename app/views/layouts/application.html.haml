@@ -11,7 +11,7 @@
     = content_for :main_menu do
       = render partial: 'layouts/application/menu'
 
-    .fixed.hide-for-large-up
+    .fixed.show-for-small-only
       %nav.top-bar{'data-topbar' => '', role: 'navigation'}
         %ul.title-area
           %li.ico= image_tag 'ico_small.png'
@@ -32,16 +32,16 @@
     .row.panel
       .large-4.medium-4.small-4.columns.panel.text-center
         = image_tag('ico.png')
-      .large-4.medium-4.small-4.columns.panel.text-center
+      .large-2.medium-1.small-1.columns.panel.text-center
 
-      .large-4.medium-4.small-4.columns.panel.text-center
+      .large-6.medium-7.small-7.columns.panel.text-center
         %h1 DuoFold
 
     .row.panel
-      .large-2.medium-2.small-2.columns.panel.show-for-large-up
+      .large-2.medium-2.small-2.columns.panel.hide-for-small-only
         %ul.side-nav= yield :main_menu
 
-      .large-10.medium-12.small-12.columns.panel
+      .large-10.medium-10.small-12.columns.panel
         = yield
 
     .row.panel.footer

@@ -1,2 +1,3 @@
-= render 'cats/cats', cats: @cats, group_len: 3, show_controls: true
-= render 'shared/pagination', objects: @cats
+= render layout: 'shared/index_layout' do
+  = render partial: 'cats/cat', collection: @cats, locals: {show_controls: true}
+= render 'shared/pagination', objects: @breeds

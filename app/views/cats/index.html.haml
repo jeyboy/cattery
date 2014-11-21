@@ -1,1 +1,2 @@
-= render 'cats/cats', cats: @cats
+= render layout: 'shared/index_layout' do
+  = render partial: 'cats/cat', collection: @cats
