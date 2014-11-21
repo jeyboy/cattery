@@ -6,3 +6,12 @@ development:
   username: jb
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  database: cattery
+  host: localhost
+  password: 123456
+  username: jb
+  pool: 5
+  timeout: 5000
