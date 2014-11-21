@@ -36,4 +36,4 @@
         = cat.owner
 
     %li.cta-button
-      %a.text-breaker.radius.button{href: '#'} Fotoalbum
+      = link_to 'Fotoalbum', gallery_path(cat_id: cat.id), class: 'text-breaker radius button'
