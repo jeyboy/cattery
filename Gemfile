@@ -35,7 +35,11 @@ gem 'mini_magick'
 
 gem 'will_paginate', '~> 3.0.6'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
+
+gem 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

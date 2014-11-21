@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   include ActionView::Helpers::SanitizeHelper
+  # include SimpleCaptcha::ControllerHelpers
 
   before_filter -> {
     params[:message].slice('name', 'email').each_pair do |k, v|
@@ -19,6 +20,6 @@ class MessagesController < ApplicationController
 
 private
   def message_params
-    params.require(:message).permit(:name, :email, :message_text)
+    params.require(:message).permit(:name, :email, :message_text, :captcha, :captcha_key)
   end
 end
