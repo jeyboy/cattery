@@ -31,7 +31,7 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 
 gem 'will_paginate', '~> 3.0.6'
 
