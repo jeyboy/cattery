@@ -1,5 +1,5 @@
 $ ->
-  menu = $('ul.side-nav')
+  menu = $('ul.side-nav, nav')
 
   if (menu.length > 0)
     section = window.location.pathname.split('/').pop()
