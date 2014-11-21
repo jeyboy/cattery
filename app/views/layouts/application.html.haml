@@ -46,5 +46,30 @@
     .row.panel.footer
       %ul.side-nav.inline-list= yield :main_menu
 
+      %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+        %li
+          = image_tag 'email.png', class: 'left padded-right'
+          %span.valign
+            %strong Email
+            %br
+            vestfalka@gmail.com
+
+
+        %li
+          = image_tag 'skype.png', class: 'left padded-right'
+          %span.valign
+            %strong Skype
+            %br
+            vestfalka
+
+
+        %li
+          = image_tag 'viber.png', class: 'left padded-right'
+          %span.valign
+            %strong Viber
+            %br
+            +38050-901-1812
+
+
     :javascript
       $(document).foundation();
