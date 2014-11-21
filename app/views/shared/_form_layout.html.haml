@@ -4,4 +4,4 @@
 
   = yield f
 
-  = render partial: 'shared/form_submit', locals: {f: f}
+  = render partial: 'shared/form_submit', locals: {f: f, has_return: local_assigns[:has_return]}

@@ -1,7 +1,7 @@
 .row.panel
   .large-12.medium-12.small-12.columns
 
-    = render layout: 'shared/form_layout', locals: {object: @cat} do |f|
+    = render layout: 'shared/form_layout', locals: {object: @cat, has_return: true} do |f|
       = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
         = f.text_field :name, placeholder: 'Name..'
 

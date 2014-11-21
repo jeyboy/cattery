@@ -14,7 +14,7 @@ class Admin::ColorsController < Admin::AdminController
   def create
     @color = Color.new(color_params)
     if @color.save
-      redirect_to [:admin, :colors], notice: 'Color was successfully created.'
+      redirect_to redirect_path(:colors), notice: 'Color was successfully created.'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class Admin::ColorsController < Admin::AdminController
 
   def update
     if @color.update(color_params)
-      redirect_to [:admin, :colors], notice: 'Color was successfully updated.'
+      redirect_to redirect_path(:colors), notice: 'Color was successfully updated.'
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class Admin::ColorsController < Admin::AdminController
 
   def destroy
     @color.destroy
-    redirect_to [:admin, :colors], notice: 'Color was successfully destroyed.'
+    redirect_to redirect_path(:colors), notice: 'Color was successfully destroyed.'
   end
 
 private

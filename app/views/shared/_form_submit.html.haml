@@ -1,4 +1,6 @@
 %hr
 .row.actions
   .large-12.medium-12.small-12.columns
-    = f.button class: 'button radius'
+    = f.button 'Proceed', class: 'button radius'
+    - if local_assigns[:has_return]
+      = f.button 'Proceed and Return', class: 'button radius', value: 'return'

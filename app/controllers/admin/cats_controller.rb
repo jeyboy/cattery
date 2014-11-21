@@ -21,7 +21,7 @@ class Admin::CatsController < Admin::AdminController
     @cat = Cat.new(cat_params)
 
     if @cat.save
-      redirect_to [:admin, :cats], notice: 'Cat was successfully created.'
+      redirect_to redirect_path(:cats), notice: 'Cat was successfully created.'
     else
       @parent_cats = parent_cats
       pict_defs(@cat)
@@ -31,7 +31,7 @@ class Admin::CatsController < Admin::AdminController
 
   def update
     if @cat.update(cat_params)
-      redirect_to [:admin, :cats], notice: 'Cat was successfully updated.'
+      redirect_to redirect_path(:cats), notice: 'Cat was successfully updated.'
     else
       pict_defs(@cat)
       render :edit
@@ -40,7 +40,7 @@ class Admin::CatsController < Admin::AdminController
 
   def destroy
     @cat.destroy
-    redirect_to [:admin, :cats], notice: 'Cat was successfully destroyed.'
+    redirect_to redirect_path(:cats), notice: 'Cat was successfully destroyed.'
   end
 
 protected

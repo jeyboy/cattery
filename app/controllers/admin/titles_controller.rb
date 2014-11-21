@@ -14,7 +14,7 @@ class Admin::TitlesController < Admin::AdminController
   def create
     @title = Title.new(title_params)
     if @title.save
-      redirect_to [:admin, :titles], notice: 'Title was successfully created.'
+      redirect_to redirect_path(:titles), notice: 'Title was successfully created.'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class Admin::TitlesController < Admin::AdminController
 
   def update
     if @title.update(title_params)
-      redirect_to [:admin, :titles], notice: 'Title was successfully updated.'
+      redirect_to redirect_path(:titles), notice: 'Title was successfully updated.'
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class Admin::TitlesController < Admin::AdminController
 
   def destroy
     @title.destroy
-    redirect_to [:admin, :titles], notice: 'Title was successfully destroyed.'
+    redirect_to redirect_path(:titles), notice: 'Title was successfully destroyed.'
   end
 
 private

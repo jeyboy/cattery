@@ -14,7 +14,7 @@ class Admin::BreedsController < Admin::AdminController
   def create
     @breed = Breed.new(breed_params)
     if @breed.save
-      redirect_to [:admin, :breeds], notice: 'Breed was successfully created.'
+      redirect_to redirect_path(:breeds), notice: 'Breed was successfully created.'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class Admin::BreedsController < Admin::AdminController
 
   def update
     if @breed.update(breed_params)
-      redirect_to [:admin, :breeds], notice: 'Breed was successfully updated.'
+      redirect_to redirect_path(:breeds), notice: 'Breed was successfully updated.'
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class Admin::BreedsController < Admin::AdminController
 
   def destroy
     @breed.destroy
-    redirect_to [:admin, :breeds], notice: 'Breed was successfully destroyed.'
+    redirect_to redirect_path(:breeds), notice: 'Breed was successfully destroyed.'
   end
 
 private

@@ -6,7 +6,15 @@ class Admin::AdminController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  rescue_from 'ActionController::RedirectBackError' do
+    redirect_to :root
+  end
+
 private
+  def redirect_path(part)
+    params['button'] ? :back : [:admin, part]
+  end
+
   def pagination_pre_page
     10
   end
