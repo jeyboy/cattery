@@ -4,5 +4,4 @@
 
   = render layout: 'shared/form_field', locals: {f: f, name: :body, text: 'Body'} do
     -#= f.cktext_area :body, ckeditor: {:uiColor => '#BBBBBB', :toolbar => 'full'}
-    = f.cktext_area :body, ckeditor: {:toolbar => 'full'}
-    -#= f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'ckeditor'
+    = f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'editor'

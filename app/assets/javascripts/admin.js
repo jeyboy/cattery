@@ -8,4 +8,8 @@
 
 //= require ./common
 
-//= require ckeditor/init
+//= require ./editor/index
+
+$('document').ready(function() {
+    $('.editor').editable({inlineMode: false})
+});

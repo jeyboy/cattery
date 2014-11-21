@@ -6,5 +6,7 @@
 
  *= require ./common
 
+ *= require ./editor/index
+
  *= require_self
  */

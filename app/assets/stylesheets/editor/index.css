@@ -1,0 +1,11 @@
+/*
+*= require ./themes/dark.min
+*= require ./font-awesome.min
+*= require ./froala_content.min
+*= require ./froala_editor.min
+*= require ./froala_style.min
+
+* require_directory ./themes*
+
+*= require_self
+*/
