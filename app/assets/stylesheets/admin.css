@@ -6,7 +6,5 @@
 
  *= require ./common
 
- *= require_directory ./ckeditor
-
  *= require_self
  */

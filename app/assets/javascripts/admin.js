@@ -7,4 +7,5 @@
 //= require_directory ./admin
 
 //= require ./common
-//= require_directory ./ckeditor
+
+//= require ckeditor/init
