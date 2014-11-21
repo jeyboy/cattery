@@ -12,7 +12,7 @@ class Admin::AdminController < ActionController::Base
 
 private
   def redirect_path(part)
-    params['button'] ? :back : [:admin, part]
+    params.has_key?('proceed_and_return') ? :back : [:admin, part]
   end
 
   def pagination_pre_page
