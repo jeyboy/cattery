@@ -1,7 +1,8 @@
 - if @message.persisted?
   :plain
-    $('.messages').prepend('#{j(render(partial: 'messages/message', locals: {message: @message}, formats: [:html]))}');
+    //$('.messages').prepend('#{j(render(partial: 'messages/message', locals: {message: @message}, formats: [:html]))}');
     $('.message_form').replaceWith('#{j(render(partial: 'messages/message_form', locals: {message: Message.new}, formats: [:html]))}');
+    showMessage("Thank you for your reference! We'll review it and get back to you within 48 hours");
 - else
   :plain
     $('.message_form').replaceWith('#{j(render(partial: 'messages/message_form', locals: {message: @message}, formats: [:html]))}');

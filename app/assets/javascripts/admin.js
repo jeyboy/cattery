@@ -7,6 +7,7 @@
 //= require_directory ./admin
 
 //= require ./common
+//= require ./notifies
 
 //= require ./editor/index
 

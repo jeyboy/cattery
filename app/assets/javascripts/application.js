@@ -7,3 +7,4 @@
 //= require_directory ./application
 
 //= require ./common
+//= require ./notifies
