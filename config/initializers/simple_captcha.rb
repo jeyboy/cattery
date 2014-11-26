@@ -3,7 +3,7 @@ SimpleCaptcha.setup do |sc|
   # sc.image_size = '80x34'
 
   # default: 5
-  sc.length = 5
+  sc.length = 3
 
   # default: simply_blue
   # possible values:
@@ -16,7 +16,7 @@ SimpleCaptcha.setup do |sc|
   # 'charcoal_grey',
   # 'almost_invisible'
   # 'random'
-  sc.image_style = 'embosed_silver'
+  sc.image_style = 'all_black'
 
   # default: low
   # possible values: 'low', 'medium', 'high', 'random'

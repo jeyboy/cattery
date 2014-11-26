@@ -1,5 +1,5 @@
 /*
-
+ *= require 'chosen'
 */
 
 .flashes {
@@ -49,6 +49,10 @@ li.ico {
 
 .padded-right {
   padding-right: 10px;
+}
+
+.marged div {
+  margin: 0 -2px;
 }
 
 //.no-border {

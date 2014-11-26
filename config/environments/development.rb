@@ -40,16 +40,15 @@ Rails.application.configure do
       only_path: false
   }
 
-  ENV['MAIL_USER'] ||= ''
-  ENV['MAIL_PASS'] ||= ''
+  config.action_mailer.delivery_method = :letter_opener
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      user_name:            ENV['MAIL_USER'],
-      password:             ENV['MAIL_PASS'],
-      authentication:       'plain',
-      enable_starttls_auto: true
-  }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     address:              'smtp.gmail.com',
+  #     port:                 587,
+  #     user_name:            ENV['MAIL_USER'],
+  #     password:             ENV['MAIL_PASS'],
+  #     authentication:       'plain',
+  #     enable_starttls_auto: true
+  # }
 end

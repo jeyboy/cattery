@@ -5,6 +5,6 @@ class MessageMailer < ActionMailer::Base
     image_path = Rails.root.join('app/assets/images')
     attachments.inline['ico'] = File.read(image_path.join('ico.png'))
 
-    mail(to: ENV['MAIL_USER'], from: message_obj.email, subject: 'Bla bla bla')
+    mail(to: ENV['SITE_MAIL'], from: message_obj.email, subject: 'Bla bla bla')
   end
 end

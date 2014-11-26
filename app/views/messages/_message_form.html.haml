@@ -5,8 +5,7 @@
       = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name *'} do
         .row.collapse
           .small-3.large-2.columns
-            .prefix
-              = f.collection_select :title, %w(Mr. Mrs. Ms.), :to_s, :to_s
+            = f.collection_select :title, %w(Mr. Mrs. Ms.), :to_s, :to_s
           .small-9.large-10.columns
             = f.text_field :name, placeholder: 'Name..'
 
