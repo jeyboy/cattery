@@ -19,5 +19,5 @@
       = render layout: 'shared/form_field', locals: {f: f, name: :message_text, text: 'Text'} do
         = f.text_area :message_text, placeholder: 'Text..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :message_text, text: 'Captcha *'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :captcha, text: 'Captcha *'} do
         = f.simple_captcha

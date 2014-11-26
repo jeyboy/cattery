@@ -1,0 +1,65 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
+    %meta{content: 'initial-scale=1.0', name: 'viewport'}
+    %meta{content: 'telephone=no', name: 'format-detection'}
+    -#/ disable auto telephone linking in iOS
+    -#%title= @product.name
+    :css
+      /* Resets: see reset.css for details */
+      .ReadMsgBody { width: 100%; background-color: #ebebeb;}
+      .ExternalClass {width: 100%; background-color: #ebebeb;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
+      body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+      body {margin:0; padding:0;}
+      table {border-spacing:0;}
+      table td {border-collapse:collapse;}
+      .yshortcuts a {border-bottom: none !important;}
+
+
+      /* Constrain email width for small screens */
+      @media screen and (max-width: 600px) {
+          table[class="container"] {
+              width: 95% !important;
+          }
+      }
+
+      /* Give content more room on mobile */
+      @media screen and (max-width: 480px) {
+          td[class="container-padding"] {
+              padding-left: 12px !important;
+              padding-right: 12px !important;
+          }
+       }
+
+  %body{bgcolor: '#ebebeb', leftmargin: '0', marginheight: '0', marginwidth: '0', style: 'margin:0; padding:0;', topmargin: '0'}
+    %table.container{bgcolor: '#ebebeb', border: '0', cellpadding: '0', cellspacing: '0', width: '600'}
+      %tr
+        %td= image_tag(attachments['ico'].url, style: 'width: 100%')
+
+    %table.container{bgcolor: '#ebebeb', border: '0', cellpadding: '0', cellspacing: '0', width: '600'}
+      %tr
+        %td.container-padding{bgcolor: '#ffffff', style: 'background-color: #ffffff;  font-size: 14px; line-height: 20px; font-family: Helvetica, sans-serif; color: #333;'}
+          %table{style: 'padding-left: 30px;padding-right: 30px'}
+            %tr
+              %td= "#{@message.title} #{@message.name}"
+              %td= @message.phone
+              %td
+
+            %tr
+              %td{valign: 'top'}
+              %td
+              %td= @message.message_text
+          -#%br/
+          -#%table.container{bgcolor: '#ebebeb', border: '0', cellpadding: '0', cellspacing: '0', width: '600'}
+          -#  %td
+          -#  %tr
+          -#    %br/
+          -#    %br/
+          -#    %div{style: 'padding-left: 20px;padding-right: 20px;font-family: arial, sans-serif;font-size: 12px ;text-align: center;color: #b4b4b4'}
+          -#      Copyright 2014 | SABEResPODER| 1849 Sawtelle blvd, ste 630, Los Angeles CA, 90025
+          -#      %br/
+          -#      %br/
+          -#    %br/
+    %br/

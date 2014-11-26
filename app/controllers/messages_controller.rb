@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
-    SendMailer.deliver_message(@message).deliver if @message.persisted?
+    MessageMailer.prepare(@message).deliver! if @message.persisted?
   end
 
 private

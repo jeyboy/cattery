@@ -36,15 +36,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = {
-      host: HOST,
+      host: 'http://localhost:3000/',
       only_path: false
   }
+
+  ENV['MAIL_USER'] ||= ''
+  ENV['MAIL_PASS'] ||= ''
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'saberespoder.com',
       user_name:            ENV['MAIL_USER'],
       password:             ENV['MAIL_PASS'],
       authentication:       'plain',
