@@ -16,6 +16,8 @@ class MessagesController < ApplicationController
   def create
     @message = Message.create(message_params)
     MessageMailer.prepare(@message).deliver! if @message.persisted?
+  rescue => e
+    render js: "showMessage('#{e.message.parameterize}', 'alert'); spoil('.alert-box');"
   end
 
 private

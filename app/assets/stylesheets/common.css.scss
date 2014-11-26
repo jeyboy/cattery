@@ -6,20 +6,7 @@
   padding: 10px 0;
 }
 
-.notice {
-  background-color: lightgreen;
-}
-
-.alert {
-  background-color: indianred;
-}
-
-#error_explanation {
-  text-align: center;
-}
-
-
-ul, li, .alert, .notice, .round-bordered {
+ul, li, .round-bordered {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;

@@ -6,3 +6,4 @@
 - else
   :plain
     $('.message_form').replaceWith('#{j(render(partial: 'messages/message_form', locals: {message: @message}, formats: [:html]))}');
+    spoil('.error');
