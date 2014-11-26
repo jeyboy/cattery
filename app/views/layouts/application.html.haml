@@ -30,23 +30,25 @@
 
     = render 'layouts/flashes'
 
-    .row.panel
-      .large-4.medium-4.small-4.columns.panel.text-center
-        = image_tag('ico.png', size: '120x120')
+    .row
+      .large-4.medium-4.small-4.columns.text-center
+        -#= image_tag('ico.png', size: '120x120')
       .large-2.medium-1.small-1.columns
 
-      .large-6.medium-7.small-7.columns.panel.text-center
+      .large-6.medium-7.small-7.columns.text-center
         = image_tag('duofold_title.png', size: '360x120')
 
-    .row.panel
-      .large-2.medium-2.small-2.columns.panel.hide-for-small-only
+    %hr
+
+    .row
+      .large-2.medium-2.small-2.columns.hide-for-small-only
         %ul.side-nav= yield :main_menu
 
-      .large-10.medium-10.small-12.columns.panel
+      .large-10.medium-10.small-12.columns
         = yield
 
     .row.panel.footer
-      %ul.side-nav.inline-list.small-block-grid-3.medium-block-grid-6.large-block-grid-6= yield :main_menu
+      %ul.side-nav.inline-list.small-block-grid-4.medium-block-grid-7.large-block-grid-7= yield :main_menu
       %hr
       %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
         %li
