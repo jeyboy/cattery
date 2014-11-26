@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#show', page: 'home'
 
+  get '/news',        to: 'static_pages#news', as: 'news'
   get '/cats',        to: 'cats#index', is_kitty: false, is_cat: true,   as: 'cats'
   get '/lady-cats',   to: 'cats#index', is_kitty: false, is_cat: false,   as: 'lady-cats'
   get '/kittens',     to: 'cats#index', is_kitty: true,   as: 'kittens'

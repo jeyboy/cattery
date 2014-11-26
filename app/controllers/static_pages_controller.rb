@@ -3,4 +3,8 @@ class StaticPagesController < ApplicationController
     @page = StaticPage.where(name: params[:page]).first ||
         StaticPage.where(name: 'home').first
   end
+
+  def news
+
+  end
 end
