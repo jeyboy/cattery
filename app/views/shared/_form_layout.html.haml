@@ -1,6 +1,7 @@
 - persistence = object.try(:persisted?)
 = form_for(object, url: (persistence ? [:admin, object] : [:admin, object.class.name.underscore.pluralize]), method: (persistence ? 'put' : 'post')) do |f|
   = render 'shared/errors', object: f.object
+  - init_form_fields_mandatory(f)
 
   = yield f
 

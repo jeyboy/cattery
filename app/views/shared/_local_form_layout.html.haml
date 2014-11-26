@@ -1,5 +1,6 @@
 = form_for(object, remote: true, html: {class: local_assigns[:classes]}) do |f|
   = render 'shared/errors', object: f.object
+  - init_form_fields_mandatory(f)
 
   = yield f
 
