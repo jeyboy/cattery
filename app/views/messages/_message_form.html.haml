@@ -1,15 +1,15 @@
 .row.message_form
-  .large-8.medium-10.small-12.columns.large-offset-2.medium-offset-1.text-center
+  .large-9.medium-11.small-12.columns.large-offset-2.medium-offset-1.text-center
     = render layout: 'shared/local_form_layout', locals: {object: message} do |f|
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name *'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name*'} do
         .row.collapse
           .small-3.large-2.columns
             = f.collection_select :title, %w(Mr. Mrs. Ms.), :to_s, :to_s
           .small-9.large-10.columns
             = f.text_field :name, placeholder: 'Name..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :email, text: 'Email *'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :email, text: 'Email*'} do
         = f.email_field :email, placeholder: 'Email..'
 
       = render layout: 'shared/form_field', locals: {f: f, name: :phone, text: 'Phone'} do
@@ -18,5 +18,5 @@
       = render layout: 'shared/form_field', locals: {f: f, name: :message_text, text: 'Text'} do
         = f.text_area :message_text, placeholder: 'Text..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :captcha, text: 'Captcha *'} do
+      = render layout: 'shared/form_field', locals: {f: f, name: :captcha, text: 'Captcha*'} do
         = f.simple_captcha

@@ -10,4 +10,6 @@ window.spoil = (selector) ->
 $ ->
   $('select').chosen({
     disable_search_threshold: 10
+    inherit_select_classes: true
+    width: undefined
   });
