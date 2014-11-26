@@ -12,8 +12,8 @@
         = link_to '#', class: 'close' do
           &times;
 
-    - if flash[:info]
-      .alert-box.radius.info{'data-alert' => nil}
-        = flash[:info]
-        = link_to '#', class: 'close' do
-          &times;
+    -#- if flash[:info]
+    .alert-box.radius.info{'data-alert' => nil}
+      = flash[:info]
+      = link_to '#', class: 'close' do
+        &times;
