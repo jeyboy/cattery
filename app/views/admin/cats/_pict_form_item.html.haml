@@ -12,8 +12,10 @@
   .large-3.medium-3.small-3.columns
 
     = link_to '#', class: 'button round cat_pict_del' do
-      = image_tag 'delete-icon-small.png'
+      .show-for-small-only
+        = image_tag 'delete-icon-tiny.png'
       .hide-for-small-only
+        = image_tag 'delete-icon-small.png'
         Delete
 
     = f.hidden_field :_destroy, value: false

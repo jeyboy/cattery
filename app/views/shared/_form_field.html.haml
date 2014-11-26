@@ -1,7 +1,7 @@
 - error = f.object.errors[name].first
 .row
-  .large-2.medium-2.small-2.columns.text-center
-    = label_tag name, class: "inline right #{'error' if error}" do
+  .large-2.medium-2.small-2.columns.text-center.no-h-margin.no-h-padding
+    = label_tag name, class: "no-h-margin inline right #{'error' if error}" do
       = text
   .large-10.medium-10.small-10.columns{class: ('error' if error)}
     = yield

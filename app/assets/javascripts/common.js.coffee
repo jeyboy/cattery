@@ -8,8 +8,10 @@ window.spoil = (selector) ->
   }, 500);
 
 $ ->
+  $('select.year, select.month, select.day, select.hour, select.minute, select.second').wrap('<li>');
+
   $('select').chosen({
     disable_search_threshold: 10
     inherit_select_classes: true
-    width: undefined
+    width: '100%'
   });

@@ -1,8 +1,8 @@
 /*
- *= require_directory ./admin
-
  *= require ./foundation/foundation.min
  *= require ./foundation/normalize
+
+ *= require_directory ./admin
 
  *= require ./common
 

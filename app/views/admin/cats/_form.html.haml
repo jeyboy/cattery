@@ -33,7 +33,8 @@
         = f.collection_select :father_id, @parent_cats.where(is_cat: true), :id, :name, prompt: 'Father..'
 
       = render layout: 'shared/form_field', locals: {f: f, name: :birthday, text: 'Birthday'} do
-        = f.date_select :birthday, {}, class: 'large-4 medium-4 small-4 columns text-center'
+        %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+          = f.date_select :birthday, {with_css_classes: true}
 
       = render layout: 'shared/form_field', locals: {f: f, name: :cat_picts, text: 'Pictures'} do
         = render 'admin/cats/picts_form', f: f
