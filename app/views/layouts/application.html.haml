@@ -39,7 +39,7 @@
 
       -#.large-6.medium-7.small-7.columns.text-center
       .large-12.medium-12.small-12.columns.text-center
-        = image_tag('duofold_title3.png')
+        = image_tag('duofold_title3.png', width: 800)
 
     %hr
 
@@ -57,28 +57,24 @@
       %hr
       %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
         %li
-          = image_tag 'email.png', class: 'left padded-right'
+          = image_tag 'email.png', size: '32x32', class: 'left padded-right'
           %span.valign
-            %strong Email
-            %br
+            %strong.text-center Email
             %strong= link_to 'vestfalka@gmail.com', "mailto:vestfalka@gmail.com?subject='Site visit'"
 
 
         %li
-          = image_tag 'skype.png', class: 'left padded-right'
+          = image_tag 'skype.png', size: '32x32', class: 'left padded-right'
           %span.valign
             %strong Skype
-            %br
             vestfalka
 
 
         %li
-          = image_tag 'viber.png', class: 'left padded-right'
+          = image_tag 'viber.png', size: '32x32', class: 'left padded-right'
           %span.valign
             %strong Viber
-            %br
             +38050-901-1812
-
 
     :javascript
       $(document).foundation();
