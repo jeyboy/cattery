@@ -5,14 +5,14 @@
 
 .side-nav {
   li.active {
-//    margin-left: 2rem;
-//    list-style-image: url(/assets/ico_small.png) !important;
+    a, a:hover {
+      //    margin-left: 2rem;
+      //    list-style-image: url(/assets/ico_small.png) !important;
 
-    background-image: image-url('ico_small.png');
-    background-repeat: no-repeat;
-    background-position: 0 50%;
+      background-image: image-url('ico_small.png') !important;
+      background-repeat: no-repeat  !important;
+      background-position: 0 50%  !important;
 
-    a {
       font-weight: bold !important;
       padding-left: 40px !important;
     }
