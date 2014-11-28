@@ -1,4 +1,5 @@
-//= require jquery
+// require jquery
+//= require ./editor/jquery-1.11.1.min
 //= require jquery_ujs
 
 // require ./foundation/foundation.min

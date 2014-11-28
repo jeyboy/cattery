@@ -2,6 +2,11 @@
 #= require_directory ./foundation/modules
 #= require 'chosen.jquery'
 
+#= require 'fastclick'
+#= require 'jquery.cookie'
+#= require 'placeholder'
+#= require 'modernizr'
+
 window.spoil = (selector) ->
   $('html, body').animate({
     scrollTop: $(selector).offset().top - 60 # todo: calculate elem height
