@@ -4,7 +4,11 @@ class Admin::CatsController < Admin::AdminController
   before_filter -> { @parent_cats = parent_cats.where.not(id: @cat.id)}, only: [:edit, :update]
 
   def index
-    @cats = Cat.paginate(page: params[:page], per_page: pagination_pre_page)
+    @cats = Cat
+    @cats = @cats.where(breed_id: params[:breed_id]) if params.has_key? :breed_id
+    @cats = @cats.where(color_id: params[:color_id]) if params.has_key? :color_id
+    @cats = @cats.where(title_id: params[:title_id]) if params.has_key? :title_id
+    @cats = @cats.paginate(page: params[:page], per_page: pagination_pre_page)
   end
 
   def show;  end

@@ -2,3 +2,6 @@
   %ul.pricing-table
     %li.title.text-center
       = render 'shared/control_header', object: title, text: title.name
+
+    %li.cta-button
+      = link_to 'Cats', admin_cats_path(title_id: title.id), class: 'text-breaker radius button'
