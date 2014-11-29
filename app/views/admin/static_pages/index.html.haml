@@ -4,5 +4,5 @@
       %ul.pricing-table
         %li.title.text-center
           = render 'shared/control_header', object: page, text: page.name, no_delete_button: true
-        %li.bullet-item
+        %li.bullet-item.clearfix
           = raw page.body

@@ -13,5 +13,10 @@
 //= require ./editor/index
 
 $('document').ready(function() {
-    $('.editor').editable({inlineMode: false})
+    $('.editor').editable({
+        inlineMode: false,
+//        paragraphy: false,
+        spellcheck: true,
+        toolbarFixed: false
+    })
 });
