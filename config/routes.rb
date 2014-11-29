@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :titles
   end
 
+  resources :contents, only: [:index, :show]
+
   resource :static_pages, only: [:show]
 
   resource :gallery, controller: 'gallery', only: [:show]
@@ -23,7 +25,10 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#show', page: 'home'
 
-  get '/news',        to: 'static_pages#news', as: 'news'
+  get '/news',        to: 'contents#index', content_type_ids: [:news], as: 'news'
+  get '/posts',       to: 'contents#index', content_type_ids: [:posts], as: 'posts'
+  get '/ads',         to: 'contents#index', content_type_ids: [:ads], as: 'ads'
+
   get '/cats',        to: 'cats#index', is_kitty: false, is_cat: true,   as: 'cats'
   get '/lady-cats',   to: 'cats#index', is_kitty: false, is_cat: false,   as: 'lady-cats'
   get '/kittens',     to: 'cats#index', is_kitty: true,   as: 'kittens'

@@ -1,7 +1,7 @@
 require Rails.root.join('app', 'uploaders', 'picture_uploader.rb')
 
-class CatPict < ActiveRecord::Base
+class ContentPict < ActiveRecord::Base
   mount_uploader :pict, ::PictureUploader
 
-  belongs_to :cat
+  belongs_to :content
 end

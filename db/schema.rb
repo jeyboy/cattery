@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122004517) do
+ActiveRecord::Schema.define(version: 20141129024927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,28 @@ ActiveRecord::Schema.define(version: 20141122004517) do
   end
 
   add_index "colors", ["name"], name: "index_colors_on_name", unique: true, using: :btree
+
+  create_table "content_picts", force: true do |t|
+    t.integer  "content_id"
+    t.text     "pict"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "content_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contents", force: true do |t|
+    t.string   "content_type_id"
+    t.string   "integer"
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.string   "email",        null: false
