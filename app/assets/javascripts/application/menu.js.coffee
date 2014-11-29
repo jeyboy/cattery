@@ -3,5 +3,8 @@ $ ->
 
   if (menu.length > 0)
     section = window.location.pathname.split('/').pop()
+    if (section.length == 0)
+      section = 'default'
+
     if (section)
       menu.find(".#{section.toLowerCase()}").addClass('active')

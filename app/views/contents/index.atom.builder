@@ -9,10 +9,12 @@ atom_feed feed_options do |feed|
 
   @contents.all.each do |content|
     feed.entry content, {published: content.created_at, updated: content.updated_at} do |entry|
-      entry.title content.title
+      entry.title content.name
       entry.content content.body, type: 'html'
 
-      # entry.content image_tag(content.image.url(:thumb)), type: 'html'
+      content.content_picts.each do |cp|
+        entry.content image_tag(cp.pict.url(:thumb)), type: 'html'
+      end
 
       entry.author do |author|
         author.name 'DuoFold'
@@ -20,7 +22,7 @@ atom_feed feed_options do |feed|
 
       entry.url content_url(content)
 
-      entry.summary truncate(content.body, length: 120).html_safe
+      # entry.summary raw(truncate(content.body, length: 120))
     end
   end
 end
