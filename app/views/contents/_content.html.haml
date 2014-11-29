@@ -1,0 +1,13 @@
+%ul.pricing-table
+  %li.title.text-breaker= content.name
+
+  %li.bullet-item.text-breaker
+    = raw content.body
+
+  -#- if cat.title
+  -#  %li.description
+  -#    %strong Title:
+  -#    = cat.title.name
+
+  -#%li.cta-button
+  -#  = link_to 'Fotoalbum', gallery_path(cat_id: cat.id), class: 'text-breaker radius button'

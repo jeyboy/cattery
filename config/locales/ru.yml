@@ -1,2 +1,4 @@
 ru:
   locale: 'ru'
+  page:
+    not_found: ''

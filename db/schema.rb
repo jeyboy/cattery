@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129024927) do
+ActiveRecord::Schema.define(version: 20141129065541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,15 +79,8 @@ ActiveRecord::Schema.define(version: 20141129024927) do
     t.datetime "updated_at"
   end
 
-  create_table "content_types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "contents", force: true do |t|
-    t.string   "content_type_id"
-    t.string   "integer"
+    t.integer  "content_type"
     t.string   "name"
     t.text     "body"
     t.datetime "created_at"
@@ -112,15 +105,6 @@ ActiveRecord::Schema.define(version: 20141129024927) do
   end
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
-
-  create_table "static_pages", force: true do |t|
-    t.string   "name"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "static_pages", ["name"], name: "index_static_pages_on_name", unique: true, using: :btree
 
   create_table "titles", force: true do |t|
     t.string   "name"

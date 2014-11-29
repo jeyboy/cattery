@@ -1,3 +1,9 @@
 %li.dashboard=  link_to 'Dashboard', [:admin, :dashboard]
 %li.messages=   link_to 'Messages', [:admin, :messages]
 %li.static_pages=   link_to 'Static Pages', [:admin, :static_pages]
+
+%li.contents.has-dropdown
+  = link_to 'Contents', '#'
+  %ul.dropdown
+    %li.new=    link_to 'New Content', [:new, :admin, :content]
+    %li.index=  link_to 'Contents List', [:admin, :contents]

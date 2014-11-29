@@ -1,2 +1,4 @@
 = render layout: 'shared/index_layout' do
   = render partial: 'cats/cat', collection: @cats
+
+= render 'shared/pagination', objects: @cats

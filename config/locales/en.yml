@@ -1,2 +1,4 @@
 en:
   locale: 'en-US'
+  page:
+    not_found: 'Page not found'

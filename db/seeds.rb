@@ -48,28 +48,7 @@
 
 User.create(email: 'a@b.com', password: '12345678', password_confirmation: '12345678')
 
-StaticPage.create(name: 'home', body: '
-  <span class="title">ЗДРАВСТВУЙТЕ!</span><br><br>
-        <table cellpadding="0" cellspacing="0" width="100%">
-          <tbody><tr valign="top">
-            <td style="padding-right: 10px;" width="100%">
-              <p></p><p><br>Здравствуйте!<br>
-
-  <br>Мы рады приветствовать Вас в нашем питомнике!<br>
-  Питомник Beautifold занимается разведением шотландских короткошерстных  (скотиш-фолд и скотиш-страйт) а так же длинношерстных (хайленд-фолд и  хайленд-страйт) кошек как классических окрасов, так и эксклюзивных( золотые и серебристые затушеванные). Основным направлением нашего питомника является работа с колорным окрасом, кроме того мы развиваем новое для себя направление - биколорные окрасы<br>
-  <br>Beautifold  - это коллективный питомник, нас объединяют дружба и любовь к кошкам. <br>
-  Выпускники нашего питомника радуют своих хозяев в разных городах России и за ее пределами.<br>
-  Котята  нашего питомника выращены в любви и заботе, прекрасно воспитаны,  привиты по возрасту и имеют все необходимые документы. Мы гарантируем  новым хозяевам помощь и поддержку в воспитании и содержании котенка.</p>
-  <p>&nbsp;</p><p></p>
-            </td>
-            <td>
-       <table cellpadding="0" cellspacing="0"><tbody><tr><td style="padding: 5px 5px 5px 5px; border: 1px solid #E2E2E2;"><img src="http://beautifold.ru//images/index/1.jpg" border="0"></td></tr></tbody></table><br><br><table cellpadding="0" cellspacing="0"><tbody><tr><td style="padding: 5px 5px 5px 5px; border: 1px solid #E2E2E2;"><img src="http://beautifold.ru//images/index/2.jpg" border="0"></td></tr></tbody></table><br><br>
-            </td>
-          </tr>
-        </tbody></table>
-')
-
-StaticPage.create(name: 'links', body: '
+Content.create(content_type: Content.content_types['static'], name: 'links', body: '
   <span class="title">Ссылки</span><br><br>
 					<p>
 						1. <span style="color: #3594B8; font-weight: bold;">Fluffy Joy</span>
@@ -111,23 +90,4 @@ StaticPage.create(name: 'links', body: '
 	<label for="embed_code1">Код банера</label><br>
 	<textarea style="width:100%" id="embed_code1" name="embed_code1" onclick="document.embedForm1.embed_code1.focus(); document.embedForm1.embed_code1.select();" readonly="readonly" type="text">&lt;a target=_blank href="http://www.beautifold.ru/"&gt;&lt;img src="http://www.beautifold.ru/images/b/b1.gif" width=468 height=60 border=0 alt="Питомник BEAUTIFOLD"&gt;&lt;/a&gt;</textarea>
 	</form>
-')
-
-StaticPage.create(name: 'contacts', body: '
-<span class="title">Контакты</span><br><br><p></p><p>г. Великий Новгород&nbsp;</p>
-<p>Васильева Олеся</p>
-<p>моб. тел.+792120312 70&nbsp;</p>
-<p>&nbsp;дом. тел. +7(816)2790700&nbsp;</p>
-
-<p> </p>
-<p>Коренева Елена</p>
-<p>моб. тел.+79082947804&nbsp;</p>
-
-<p> </p>
-<p>Николаева Надежда</p>
-<p>моб. тел.+79217996949&nbsp;</p>
-
-<p>эл. почта: <a href="mailto:beautifold@gmail.com">beautifold@gmail.com</a>&nbsp;&nbsp;</p>
-<p>Мы В контакте: <a href="http://vk.com/beautifold_cattery">Питомник Beautifold</a> </p>
-<p>Мы в Facebook\'e: <a href="http://www.facebook.com/beautifold">Beautifold</a></p><p></p>
 ')

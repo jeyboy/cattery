@@ -1,8 +1,7 @@
 class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
-      t.string :content_type_id
-      t.string :integer
+      t.integer :content_type
       t.string :name
       t.text :body
 

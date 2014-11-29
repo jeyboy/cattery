@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content
-    @contents = @contents.where(content_type_id: params[:content_type_ids]) if params[:content_type_ids]
+    @contents = Content.without_static
+    @contents = @contents.where(content_type: params[:content_types]) if params[:content_types]
 
     respond_to do |format|
       format.html {

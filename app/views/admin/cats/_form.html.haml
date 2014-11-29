@@ -1,40 +1,37 @@
-.row.panel
-  .large-12.medium-12.small-12.columns
+= render layout: 'shared/form_layout', locals: {object: @cat, has_return: true, html_opts: {class: 'pad_top'}} do |f|
+  = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
+    = f.text_field :name, placeholder: 'Name..'
 
-    = render layout: 'shared/form_layout', locals: {object: @cat, has_return: true} do |f|
-      = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
-        = f.text_field :name, placeholder: 'Name..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :is_cat, text: 'Is male gender'} do
+    = f.check_box :is_cat
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :is_cat, text: 'Is male gender'} do
-        = f.check_box :is_cat
+  = render layout: 'shared/form_field', locals: {f: f, name: :is_kitty, text: 'Is a kitty'} do
+    = f.check_box :is_kitty
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :is_kitty, text: 'Is a kitty'} do
-        = f.check_box :is_kitty
+  = render layout: 'shared/form_field', locals: {f: f, name: :breeder, text: 'Breeder'} do
+    = f.text_field :breeder, placeholder: 'Breeder..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :breeder, text: 'Breeder'} do
-        = f.text_field :breeder, placeholder: 'Breeder..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :owner, text: 'Owner'} do
+    = f.text_field :owner, placeholder: 'Owner..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :owner, text: 'Owner'} do
-        = f.text_field :owner, placeholder: 'Owner..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :color_id, text: 'Color'} do
+    = f.collection_select :color_id, Color.all, :id, :name, prompt: 'Color..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :color_id, text: 'Color'} do
-        = f.collection_select :color_id, Color.all, :id, :name, prompt: 'Color..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :breed_id, text: 'Breed'} do
+    = f.collection_select :breed_id, Breed.all, :id, :name, prompt: 'Breed..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :breed_id, text: 'Breed'} do
-        = f.collection_select :breed_id, Breed.all, :id, :name, prompt: 'Breed..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :title_id, text: 'Title'} do
+    = f.collection_select :title_id, Title.all, :id, :name, prompt: 'Title..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :title_id, text: 'Title'} do
-        = f.collection_select :title_id, Title.all, :id, :name, prompt: 'Title..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :mother_id, text: 'Mother'} do
+    = f.collection_select :mother_id, @parent_cats.where(is_cat: false), :id, :name, prompt: 'Mother..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :mother_id, text: 'Mother'} do
-        = f.collection_select :mother_id, @parent_cats.where(is_cat: false), :id, :name, prompt: 'Mother..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :father_id, text: 'Father'} do
+    = f.collection_select :father_id, @parent_cats.where(is_cat: true), :id, :name, prompt: 'Father..'
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :father_id, text: 'Father'} do
-        = f.collection_select :father_id, @parent_cats.where(is_cat: true), :id, :name, prompt: 'Father..'
+  = render layout: 'shared/form_field', locals: {f: f, name: :birthday, text: 'Birthday'} do
+    %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
+      = f.date_select :birthday, {with_css_classes: true}
 
-      = render layout: 'shared/form_field', locals: {f: f, name: :birthday, text: 'Birthday'} do
-        %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-3
-          = f.date_select :birthday, {with_css_classes: true}
-
-      = render layout: 'shared/form_field', locals: {f: f, name: :cat_picts, text: 'Pictures'} do
-        = render 'admin/cats/picts_form', f: f
+  = render layout: 'shared/form_field', locals: {f: f, name: :cat_picts, text: 'Pictures'} do
+    = render 'admin/cats/picts_form', f: f

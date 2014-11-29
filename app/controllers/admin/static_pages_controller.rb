@@ -2,7 +2,7 @@ class Admin::StaticPagesController < Admin::AdminController
   before_filter :set_page, only: [:edit, :update]
 
   def index
-    @pages = StaticPage.order('created_at ASC').all
+    @pages = Content.static.order('created_at ASC')
   end
 
   def edit;  end
@@ -17,10 +17,10 @@ class Admin::StaticPagesController < Admin::AdminController
 
 private
   def page_params
-    params.require(:static_page).permit(:id, :name, :body)
+    params.require(:content).permit(:id, :name, :body)
   end
 
   def set_page
-    @page = StaticPage.where(id: params[:id]).first
+    @page = Content.static.where(id: params[:id]).first
   end
 end
