@@ -17,6 +17,6 @@ $('document').ready(function() {
         inlineMode: false,
 //        paragraphy: false,
         spellcheck: true,
-        toolbarFixed: false
+//        toolbarFixed: false
     })
 });
