@@ -7,7 +7,7 @@ atom_feed feed_options do |feed|
   feed.title 'DuoFold'
   feed.updated @contents.maximum(:created_at)
 
-  @contents.each do |content|
+  @contents.all.each do |content|
     feed.entry content, {published: content.created_at, updated: content.updated_at} do |entry|
       entry.title content.title
       entry.content content.body, type: 'html'

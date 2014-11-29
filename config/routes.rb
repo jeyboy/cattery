@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :breeds
     resources :colors
     resources :titles
+    resources :contents
   end
 
   resources :contents, only: [:index, :show]

@@ -7,6 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    = auto_discovery_link_tag(:atom, contents_url(format: 'atom'))
     %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
   %body
     = content_for :main_menu do
@@ -29,6 +30,12 @@
             %ul.left
               = yield :main_menu
       .top-bar-wrapper
+
+    .row.pad_bottom.pad_top
+      .large-11.medium-10.small-9.columns
+      .large-1.medium-2.small-3.columns.text-center
+        = link_to contents_url(format: 'atom') do
+          = image_tag('rss_feed.png', size: '32x32')
 
     = render 'layouts/flashes'
 

@@ -2,8 +2,12 @@
  *= require 'chosen'
 */
 
-.flashes {
-  padding: 10px 0;
+.pad_top {
+  padding-top: 10px;
+}
+
+.pad_bottom {
+  padding-bottom: 10px;
 }
 
 ul, li, .round-bordered {

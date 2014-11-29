@@ -1,19 +1,20 @@
-.row.flashes
-  .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2.text-center
-    - if notice
-      .alert-box.radius.success{'data-alert' => nil}
-        = notice
-        = link_to '#', class: 'close' do
-          &times;
+- if alert || notice || flash[:info]
+  .row.pad_bottom
+    .large-8.medium-8.small-8.columns.large-offset-2.medium-offset-2.small-offset-2.text-center
+      - if notice
+        .alert-box.radius.success{'data-alert' => nil}
+          = notice
+          = link_to '#', class: 'close' do
+            &times;
 
-    - if alert
-      .alert-box.radius.alert{'data-alert' => nil}
-        = alert
-        = link_to '#', class: 'close' do
-          &times;
+      - if alert
+        .alert-box.radius.alert{'data-alert' => nil}
+          = alert
+          = link_to '#', class: 'close' do
+            &times;
 
-    - if flash[:info]
-      .alert-box.radius.info{'data-alert' => nil}
-        = flash[:info]
-        = link_to '#', class: 'close' do
-          &times;
+      - if flash[:info]
+        .alert-box.radius.info{'data-alert' => nil}
+          = flash[:info]
+          = link_to '#', class: 'close' do
+            &times;
