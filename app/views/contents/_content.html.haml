@@ -3,7 +3,13 @@
     %li.title.text-center
       = render 'shared/control_header', object: content, text: content.name
   - else
-    %li.title.text-breaker= content.name
+    %li.title.text-breaker
+      .row
+        .large-2.medium-3.small-5.columns.right_border
+          = content.content_type.titleize
+        .large-10.medium-9.small-7.columns
+          = content.name
+
 
   %li.margined.text-breaker
     = raw content.body
