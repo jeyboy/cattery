@@ -2,6 +2,20 @@
  *= require 'chosen'
 */
 
+.margined {
+  margin: 10px;
+}
+
+.no-h-margin {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.no-h-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .pad_top {
   padding-top: 10px;
 }
@@ -9,6 +23,11 @@
 .pad_bottom {
   padding-bottom: 10px;
 }
+
+.pad_right {
+  padding-right: 10px;
+}
+
 
 ul, li, .round-bordered {
   -webkit-border-radius: 8px;
@@ -36,20 +55,6 @@ li.ico {
 
 .valign {
   vertical-align: middle;
-}
-
-.padded-right {
-  padding-right: 10px;
-}
-
-.no-h-margin {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.no-h-padding {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
 //.no-border {

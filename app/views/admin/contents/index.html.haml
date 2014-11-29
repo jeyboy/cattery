@@ -1,10 +1,5 @@
 .row
   .large-12.medium-12.small-12.columns
-    - @contents.each do |page|
-      %ul.pricing-table
-        %li.title.text-center
-          = render 'shared/control_header', object: page, text: page.name, no_delete_button: true
-        %li.bullet-item.clearfix
-          = raw page.body
+    = render partial: 'contents/content', collection: @contents, locals: {show_controls: true}
 
 = render 'shared/pagination', objects: @contents

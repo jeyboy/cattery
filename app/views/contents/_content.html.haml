@@ -1,7 +1,11 @@
 %ul.pricing-table
-  %li.title.text-breaker= content.name
+  - if local_assigns[:show_controls]
+    %li.title.text-center
+      = render 'shared/control_header', object: content, text: content.name
+  - else
+    %li.title.text-breaker= content.name
 
-  %li.bullet-item.text-breaker
+  %li.margined.text-breaker
     = raw content.body
 
   -#- if cat.title
