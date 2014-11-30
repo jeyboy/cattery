@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   }, only: :index
 
   def index
-    @contents = Content.only_info
+    @contents = Content.only_info.order('created_at DESC')
     @contents = @contents.where(content_type: params[:content_types]) if params[:content_types]
 
     respond_to do |format|
