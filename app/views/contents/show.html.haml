@@ -1,0 +1,7 @@
+%h1= @content.name
+
+!= @content.body
+
+- if @content.content_picts.present?
+  %hr
+  = render partial: 'shared/image_layout', locals: {objects: @content.content_picts}

@@ -16,4 +16,9 @@ class ContentsController < ApplicationController
       }
     end
   end
+
+  def show
+    @content = Content.without_static.where(id: params[:id]).first
+    redirect_to root_path, alert: t('page.not_found') unless @content
+  end
 end

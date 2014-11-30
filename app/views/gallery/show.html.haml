@@ -1,2 +1,1 @@
-%ul.large-block-grid-3.medium-block-grid-2.small-block-grid-1
-  = render partial: 'gallery/image', collection: @picts
+= render partial: 'shared/image_layout', locals: {objects: @picts}
