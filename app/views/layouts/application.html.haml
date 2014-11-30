@@ -32,7 +32,10 @@
       .top-bar-wrapper
 
     .row.pad_bottom.pad_top
-      .large-11.medium-10.small-9.columns
+      .large-10.medium-8.small-6.columns
+        &nbsp;
+      .large-1.medium-2.small-3.columns.text-center
+        = render 'layouts/application/locales'
       .large-1.medium-2.small-3.columns.text-center
         = link_to contents_url(format: 'atom') do
           = image_tag('rss_feed.png', size: '32x32')
