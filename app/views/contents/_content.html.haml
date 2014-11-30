@@ -9,16 +9,14 @@
           = link_to contents_path(content_types: content.attributes['content_type']) do
             = content.content_type.titleize
         .large-10.medium-9.small-7.columns
-          = content.name
+          = link_to content_path(content) do
+            = content.name
 
 
   %li.margined.text-breaker
     = raw content.body
 
-  -#- if cat.title
-  -#  %li.description
-  -#    %strong Title:
-  -#    = cat.title.name
-
-  -#%li.cta-button
-  -#  = link_to 'Fotoalbum', gallery_path(cat_id: cat.id), class: 'text-breaker radius button'
+  - if local_assigns[:show_picts]
+    %li.bullet-item
+      %hr
+      = render partial: 'shared/image_layout', locals: {objects: content.content_picts}

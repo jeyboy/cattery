@@ -2,9 +2,9 @@ class Admin::ContentsController < Admin::AdminController
   before_filter :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = Content
+    @contents = Content.order('created_at DESC')
     @contents = @contents.where(content_type: params[:content_types]) if params.has_key? :content_types
-    @contents = @contents.without_static.order('created_at ASC').paginate(page: params[:page], per_page: pagination_pre_page)
+    @contents = @contents.without_static.paginate(page: params[:page], per_page: pagination_pre_page)
   end
 
   def show;  end
