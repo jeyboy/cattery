@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
     root to: 'contents#index'
 
+    get '/expositions', to: 'contents#index', content_types: Content.content_types['exposition'], as: 'expositions'
     get '/news',        to: 'contents#index', content_types: Content.content_types['news'], as: 'news'
     get '/posts',       to: 'contents#index', content_types: Content.content_types['post'], as: 'posts'
     get '/ads',         to: 'contents#index', content_types: Content.content_types['ad'], as: 'ads'

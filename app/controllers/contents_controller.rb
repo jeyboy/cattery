@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   }, only: :index
 
   def index
-    @contents = Content.without_static
+    @contents = Content.only_info
     @contents = @contents.where(content_type: params[:content_types]) if params[:content_types]
 
     respond_to do |format|
@@ -18,7 +18,7 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @content = Content.without_static.where(id: params[:id]).first
+    @content = Content.only_info.where(id: params[:id]).first
     redirect_to root_path, alert: t('page.not_found') unless @content
   end
 end
