@@ -1,4 +1,6 @@
 = render layout: 'shared/index_layout' do
+  != @welcome_message.body if @welcome_message
+
   = render @contents
 
 -#%a.twitter-timeline{"data-widget-id" => "538109082583187456", :href => "https://twitter.com/jeyboy1985"} Твиты от @jeyboy1985

@@ -46,7 +46,12 @@
 #     birthday: 2.weeks.ago
 # )
 
-User.create(email: 'a@b.com', password: '12345678', password_confirmation: '12345678')
+User.create(email: 'a@b.com', password: '12345678', password_confirmation: '12345678') if User.count == 0
+
+Content.create(content_type: Content.content_types['static'], name: 'welcome', body: '
+  Bla bla bla welcome
+')
+
 
 Content.create(content_type: Content.content_types['static'], name: 'links', body: '
   <span class="title">Ссылки</span><br><br>
