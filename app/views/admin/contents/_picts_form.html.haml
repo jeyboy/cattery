@@ -1,0 +1,14 @@
+%hr
+#pict_block
+  - template_obj = pict_defs(f.object.dup)
+  = f.fields_for :content_picts, template_obj.content_picts  do |pic|
+    :javascript
+      window.content_pict_template =  "#{j(render(partial: 'admin/contents/pict_form_item', locals: {f: pic})).gsub('[0]', '[%1]').gsub('_0_', '_%1_')}"
+
+  = f.fields_for :content_picts do |cpaf|
+    = render 'admin/contents/pict_form_item', f: cpaf
+
+.row
+  .large-8.medium-8.small-8.columns
+  .large-4.medium-4.small-4.columns
+    = link_to 'Add new photo', '#', class: 'add_content_pict button radius'

@@ -1,0 +1,20 @@
+.row{class: "#{('persisted' if f.object.persisted?)}"}
+  .large-3.medium-3.small-3.columns
+  .large-6.medium-6.small-6.columns
+    - if f.object.persisted?
+      = image_tag f.object.pict.url
+      = f.hidden_field :pict
+    - else
+      = f.file_field :pict
+    = f.hidden_field :pict_cache
+  .large-3.medium-3.small-3.columns
+
+    = link_to '#', class: 'button radius content_pict_del' do
+      .show-for-small-only
+        = image_tag 'delete-icon-tiny.png'
+      .hide-for-small-only
+        = image_tag 'delete-icon-small.png'
+        Delete
+
+    = f.hidden_field :_destroy, value: false
+  %hr
