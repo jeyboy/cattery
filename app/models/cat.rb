@@ -10,7 +10,7 @@ class Cat < ActiveRecord::Base
 
   accepts_nested_attributes_for :cat_picts, allow_destroy: true, reject_if: ->(attributes) { attributes['pict'].blank? }
 
-  scope :children, ->(cat) { where("#{cat.is_cat ? 'father_id' : 'mother_id'} = ?", cat.id)}
+  # scope :children, ->(cat) { where("#{cat.is_cat ? 'father_id' : 'mother_id'} = ?", cat.id)}
 
   validates :breed_id, :color_id, :breeder, :owner, :name, :birthday, presence: true
 end

@@ -7,3 +7,6 @@
 
   = render layout: 'shared/form_field', locals: {f: f, name: :body} do
     = f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'editor'
+
+  = render layout: 'shared/form_field', locals: {f: f, name: :content_picts, text: 'Pictures'} do
+    = render 'admin/contents/picts_form', f: f
