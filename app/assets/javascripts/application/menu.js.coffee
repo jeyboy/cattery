@@ -2,14 +2,9 @@ $ ->
   menu = $('ul.side-nav, nav')
 
   if (menu.length > 0)
-    splits = window.location.pathname.split('/')
-    section = splits.pop()
-    section2 = splits.pop()
+    splits = $.grep(window.location.pathname.split('/'), (name) ->
+      return name.length > 2 && (name * 1).toString() != name
+    )
+    section = splits.pop() || 'contents'
 
-    if (section.length == 0)
-      section = 'contents'
-
-    if (section2.length == 0)
-      section2 = 'contents'
-
-    menu.find(".#{section.toLowerCase()}, .#{section2.toLowerCase()}").addClass('active')
+    menu.find(".#{section.toLowerCase()}").addClass('active')
