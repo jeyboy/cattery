@@ -12,5 +12,4 @@ $ ->
     if (section2.length == 0)
       section2 = 'contents'
 
-    console.log(section, section2)
     menu.find(".#{section.toLowerCase()}, .#{section2.toLowerCase()}").addClass('active')
