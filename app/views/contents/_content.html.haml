@@ -14,7 +14,7 @@
 
 
   %li.margined.text-breaker
-    = raw content.body
+    = render partial: 'contents/content_body', locals: {content: content, show_all_langs: local_assigns[:show_all_langs]}
 
   - if local_assigns[:show_picts]
     %li.bullet-item

@@ -10,7 +10,7 @@ atom_feed feed_options do |feed|
   @contents.all.each do |content|
     feed.entry content, {published: content.created_at, updated: content.updated_at} do |entry|
       entry.title content.name
-      entry.content content.body, type: 'html'
+      entry.content render(partial: 'contents/content_body', locals: {content: content}), type: 'html'
 
       content.content_picts.each do |cp|
         entry.content image_tag(cp.pict.url(:thumbnail)), type: 'html'

@@ -1,5 +1,5 @@
 = render layout: 'shared/index_layout' do
-  != @welcome_message.body if @welcome_message
+  = render(partial: 'contents/content_body', locals: {content: @welcome_message}) if @welcome_message
 
   = render @contents, show_picts: true
 

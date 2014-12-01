@@ -1,5 +1,6 @@
 class Content < ActiveRecord::Base
   enum content_type: [ :news, :ad,  :post, :static, :exposition]
+  store :body, accessors: [ :en, :ru ]
 
   has_many :content_picts, dependent: :destroy
 

@@ -1,5 +1,5 @@
 .row
   .large-12.medium-12.small-12.columns
-    = render partial: 'contents/content', collection: @contents, locals: {show_controls: true, show_picts: true}
+    = render partial: 'contents/content', collection: @contents, locals: {show_controls: true, show_picts: true, show_all_langs: true}
 
 = render 'shared/pagination', objects: @contents

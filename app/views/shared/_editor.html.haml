@@ -1,4 +1,7 @@
-= f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'editor'
+.pad_top English
+= f.text_area :en, placeholder: 'English Page body..', rows: 10, class: 'editor'
+.pad_top Russian
+= f.text_area :ru, placeholder: 'Russian Page body..', rows: 10, class: 'editor'
 
 :javascript
   $('.editor').editable({
