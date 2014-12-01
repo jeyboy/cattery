@@ -1,4 +1,36 @@
 en:
   locale: 'en-US'
+
   page:
     not_found: 'Page not found'
+
+  form:
+    proceed: 'Proceed'
+    proceed_and_return: 'Proceed and Return'
+
+
+  menu:
+    contents: 'DuoFold`s world'
+    expositions: 'Expositions'
+    cats: 'Cats'
+    lady_cats: 'Lady-cats'
+    kittens: 'Kittens'
+    gallery: 'Gallery'
+    guest_book: 'Guest book'
+    links: 'Links'
+
+  content:
+    cat:
+      title: 'Title'
+      breed: 'Breed'
+      color: 'Color'
+      breeder: 'Breeder'
+      owner: 'Owner'
+      fotoalbum: 'Fotoalbum'
+
+    message:
+      name: 'Name'
+      email: 'Email'
+      phone: 'Phone'
+      text: 'Text'
+      captcha: 'Captcha'

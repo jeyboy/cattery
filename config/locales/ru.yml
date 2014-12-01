@@ -1,4 +1,34 @@
 ru:
   locale: 'ru'
   page:
-    not_found: ''
+    not_found: 'Страница не найдена'
+
+  form:
+    proceed: 'Обработать'
+    proceed_and_return: 'Обработать и вернуться сюда'
+
+  menu:
+    contents: 'Мир DuoFold`а'
+    expositions: 'Выставки'
+    cats: 'Коты'
+    lady_cats: 'Кошки'
+    kittens: 'Котята'
+    gallery: 'Галерея'
+    guest_book: 'Гостевая книга'
+    links: 'Ссылки'
+
+  content:
+    cat:
+      title: 'Титул'
+      breed: 'Порода'
+      color: 'Цвет'
+      breeder: 'Заводчик'
+      owner: 'Владелец'
+      fotoalbum: 'Фотоальбом'
+
+    message:
+      name: 'Имя'
+      email: 'Адрес электроной почты'
+      phone: 'Номер телефона'
+      text: 'Текст'
+      captcha: 'Капча'

@@ -1,0 +1,5 @@
+ru:
+  simple_captcha:
+    placeholder: "Введите текст с рисунка"
+    message:
+      default: "Введеный код не соотвествует коду с рисунка"

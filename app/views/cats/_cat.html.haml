@@ -12,28 +12,28 @@
     -#%li.price $99.99
     - if cat.title
       %li.description
-        %strong Title:
+        %strong #{t('content.cat.title')}:
         = cat.title.name
 
     - if cat.breed
       %li.bullet-item
-        %strong Breed:
+        %strong #{t('content.cat.breed')}:
         = cat.breed.name
 
     - if cat.color
       %li.bullet-item
-        %strong Color:
+        %strong #{t('content.cat.color')}:
         = cat.color.name
 
     - if cat.breeder
       %li.bullet-item
-        %strong Breeder:
+        %strong #{t('content.cat.breeder')}:
         = cat.breeder
 
     - if cat.owner
       %li.bullet-item
-        %strong Owner:
+        %strong #{t('content.cat.owner')}:
         = cat.owner
 
     %li.cta-button
-      = link_to 'Fotoalbum', gallery_path(cat_id: cat.id), class: 'text-breaker radius button'
+      = link_to t('content.cat.fotoalbum'), gallery_path(cat_id: cat.id), class: 'text-breaker radius button'
