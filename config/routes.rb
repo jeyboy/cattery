@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
+    resource :gallery, controller: 'gallery', only: [:create]
     resource :dashboard, controller: 'dashboard', only: [:show]
     resources :static_pages, except: [:destroy, :new, :create, :show]
     resources :cats

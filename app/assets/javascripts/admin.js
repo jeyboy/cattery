@@ -18,13 +18,7 @@
 ////        paragraphy: false,
 //        spellcheck: true,
 ////        toolbarFixed: false
-//        imageUploadParam: 'image_param',
-////        {"timestamp":1417399090,"callback":"http://localhost:3000/cloudinary_cors.html","signature":"7ab487dba9bc4545b516660ab441c4c0b45500c5","api_key":"951696928569826"}
-//
-//        // Set the image upload URL.
-//        imageUploadURL: 'https://api.cloudinary.com/v1_1/duofold/image/upload',
-//
-//        // Additional upload params.
+//        imageUploadURL: '/admin/gallery'
 //        imageUploadParams: {id: 'my_editor'}
 //    }).on('editable.imageError', function (e, editor, error) {
 //        console.log(error);
