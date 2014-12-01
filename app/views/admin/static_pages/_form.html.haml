@@ -1,7 +1,0 @@
-= render layout: 'shared/form_layout', locals: {object: @page, html_opts: {class: 'pad_top'}} do |f|
-  = render layout: 'shared/form_field', locals: {f: f, name: :name, text: 'Name'} do
-    = f.text_field :name, placeholder: 'Name..'
-
-  = render layout: 'shared/form_field', locals: {f: f, name: :body, text: 'Body'} do
-    -#= f.cktext_area :body, ckeditor: {:uiColor => '#BBBBBB', :toolbar => 'full'}
-    = f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'editor'

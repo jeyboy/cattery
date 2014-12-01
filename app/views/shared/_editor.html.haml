@@ -1,0 +1,14 @@
+= f.text_area :body, placeholder: 'Page body..', rows: 10, class: 'editor'
+
+:javascript
+  $('.editor').editable({
+      inlineMode: false,
+      //paragraphy: false,
+      spellcheck: true,
+      //toolbarFixed: false
+      //imageUploadParam: ,
+      imageUploadURL: '#{cl_upload_url({}) + '?' + (JSON.parse(cl_upload_tag_params({})).to_query)}',
+      //imageUploadParams: #{cl_upload_tag_params({}).to_json}
+  }).on('editable.imageError', function (e, editor, error) {
+      console.log(error);
+  });
