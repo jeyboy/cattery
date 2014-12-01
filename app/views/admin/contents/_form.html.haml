@@ -1,6 +1,6 @@
 = render layout: 'shared/form_layout', locals: {object: @content, html_opts: {class: 'pad_top'}} do |f|
   = render layout: 'shared/form_field', locals: {f: f, name: :content_type} do
-    = f.collection_select :content_type, Content::content_types.except(:static).keys, :to_s, :camelize
+    = f.collection_select :content_type, f.object.compatible_content_types, :to_s, :camelize
 
   = render layout: 'shared/form_field', locals: {f: f, name: :name} do
     = f.text_field :name, placeholder: 'Name..'

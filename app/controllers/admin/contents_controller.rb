@@ -21,7 +21,7 @@ class Admin::ContentsController < Admin::AdminController
     @content = Content.new(content_params)
 
     if @content.save
-      redirect_to redirect_path(:contents), notice: 'Content was successfully created.'
+      redirect_to redirect_path(@content.static? ? :static_pages : :contents), notice: 'Content was successfully created.'
     else
       pict_defs(@content)
       render :new
@@ -30,7 +30,7 @@ class Admin::ContentsController < Admin::AdminController
 
   def update
     if @content.update(content_params)
-      redirect_to redirect_path(:contents), notice: 'Content was successfully updated.'
+      redirect_to redirect_path(@content.static? ? :static_pages : :contents), notice: 'Content was successfully updated.'
     else
       pict_defs(@content)
       render :edit

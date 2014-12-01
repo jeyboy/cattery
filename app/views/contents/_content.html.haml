@@ -16,7 +16,7 @@
   %li.margined.text-breaker
     = render partial: 'contents/content_body', locals: {content: content, show_all_langs: local_assigns[:show_all_langs]}
 
-  - if local_assigns[:show_picts]
+  - if local_assigns[:show_picts] && content.content_picts.present?
     %li.bullet-item
       %hr
       = render partial: 'shared/image_layout', locals: {objects: content.content_picts}

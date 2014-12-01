@@ -11,4 +11,8 @@ class Content < ActiveRecord::Base
   scope :only_expositions, -> { where(content_type: Content.content_types['exposition']) }
 
   validates :name, uniqueness: true, if: -> { self.content_type == 'static' }
+
+  def compatible_content_types
+    static? ? ['static'] : Content::content_types.except(:static).keys
+  end
 end
