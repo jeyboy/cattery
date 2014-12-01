@@ -13,7 +13,7 @@ atom_feed feed_options do |feed|
       entry.content content.body, type: 'html'
 
       content.content_picts.each do |cp|
-        entry.content image_tag(cp.pict.url(:thumb)), type: 'html'
+        entry.content image_tag(cp.pict.url(:thumbnail)), type: 'html'
       end
 
       entry.author do |author|
