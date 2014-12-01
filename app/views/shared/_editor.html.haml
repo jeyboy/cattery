@@ -8,7 +8,7 @@
       //toolbarFixed: false
       //imageUploadParam: ,
       imageUploadURL: '#{cl_upload_url({}) + '?' + (JSON.parse(cl_upload_tag_params({})).to_query)}',
-      //imageUploadParams: #{cl_upload_tag_params({}).to_json}
+      imageUploadParams: #{cl_upload_tag_params({})}
   }).on('editable.imageError', function (e, editor, error) {
       console.log(error);
   });
