@@ -11,9 +11,8 @@ class ContentsController < ApplicationController
       format.html {
         @contents = @contents.paginate(page: params[:page], per_page: pagination_pre_page)
       }
-      format.atom {
-        render layout: false
-      }
+      format.atom { render layout: false }
+      format.rss { render layout: false }
     end
   end
 
