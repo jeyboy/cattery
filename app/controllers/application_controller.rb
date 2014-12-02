@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 private
   def pagination_pre_page
-    10
+    5
   end
 end
