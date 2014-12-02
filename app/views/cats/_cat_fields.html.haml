@@ -1,5 +1,10 @@
 %li.bullet-item
   = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
+
+- unless cat.persisted?
+  %li.bullet-item
+    = image_tag('question.png')
+
 -#%li.price $99.99
 - if cat.title
   %li.description
@@ -26,5 +31,6 @@
     %strong #{t('content.cat.owner')}:
     = cat.owner
 
-%li.cta-button
-  = link_to t('content.cat.fotoalbum'), gallery_path(cat_id: cat.id), class: 'text-breaker radius button'
+- if cat.persisted? && cat.cat_picts.present?
+  %li.cta-button
+    = link_to t('content.cat.fotoalbum'), gallery_path(cat_id: cat.id), class: 'text-breaker radius button'

@@ -27,6 +27,10 @@ en:
       exposition: 'Exposition'
 
     cat:
+      father: 'Father'
+      mother: 'Mother'
+      unknown: 'Unknown'
+
       title: 'Title'
       breed: 'Breed'
       color: 'Color'

@@ -25,6 +25,10 @@ ru:
       exposition: 'Выставка'
 
     cat:
+      father: 'Отец'
+      mother: 'Мать'
+      unknown: 'Неизвест(ен)(на)'
+
       title: 'Титул'
       breed: 'Порода'
       color: 'Цвет'

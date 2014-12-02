@@ -1,8 +1,8 @@
 .row
   .large-6.medium-6.small-6.columns
-    = render 'cats/cat_without_wrapper', cat: kitty.father, album_orient: true, title_text: ' (Father)'
+    = render 'cats/cat_without_wrapper', cat: kitty.father || Cat.new(name: t('content.cat.unknown')), album_orient: true, title_text: " (#{t('content.cat.father')})"
   .large-6.medium-6.small-6.columns
-    = render 'cats/cat_without_wrapper', cat: kitty.mother, album_orient: true, title_text: ' (Mother)'
+    = render 'cats/cat_without_wrapper', cat: kitty.mother || Cat.new(name: t('content.cat.unknown')), album_orient: true, title_text: " (#{t('content.cat.mother')})"
 
 .row
   .large-1.medium-1.small-1.columns
