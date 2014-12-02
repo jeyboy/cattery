@@ -34,11 +34,12 @@ class PictureUploader < CarrierWave::Uploader::Base
   process :tags => ['picture']
 
   version :standard do
-    process :resize_to_fill => [300, 300, :north]
+    # process :resize_to_fill => [300, 300] #[300, 300, :north]
+    resize_to_fit(nil, 300)
   end
 
   version :thumbnail do
-    resize_to_fit(100, 100)
+    resize_to_fit(nil, 100)
   end
 
   # Process files as they are uploaded:
