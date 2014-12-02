@@ -8,3 +8,7 @@
 
  *= require_self
  */
+
+.button-group .active {
+    background-color: #888888 !important;
+}

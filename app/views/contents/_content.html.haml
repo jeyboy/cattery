@@ -12,7 +12,6 @@
           = link_to content_path(content) do
             = content.name
 
-
   %li.margined.text-breaker
     = render partial: 'contents/content_body', locals: {content: content, show_all_langs: local_assigns[:show_all_langs]}
 

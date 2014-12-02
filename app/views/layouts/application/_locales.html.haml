@@ -1,4 +1,4 @@
-= link_to_if I18n.locale != I18n.default_locale, 'en', locale: 'en'
-\/
-= link_to_if I18n.locale == I18n.default_locale, 'ru', locale: 'ru'
+%ul.button-group.round
+  %li= link_to 'en', {locale: 'en'}, class: "button #{'active' if I18n.locale == I18n.default_locale}"
+  %li= link_to 'ru', {locale: 'ru'}, class: "button #{'active' if I18n.locale != I18n.default_locale}"
 
