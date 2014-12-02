@@ -12,8 +12,12 @@ class PictureUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   class << self
-    def default_pict
-      'def_cat.png'
+    def default_pict(is_kitty = false)
+      if is_kitty
+        'kitty.jpg'
+      else
+        'def_cat.png'
+      end
     end
   end
 
@@ -22,8 +26,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url
-    ActionController::Base.helpers.asset_path(PictureUploader::default_pict)
+  def default_url(is_kitty = false)
+    ActionController::Base.helpers.asset_path(PictureUploader::default_pict(is_kitty))
     # ActionController::Base.helpers.asset_path([version_name, 'def_cat.png'].compact.join('_'))
 
     # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
