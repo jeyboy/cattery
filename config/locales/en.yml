@@ -20,6 +20,12 @@ en:
     links: 'Links'
 
   content:
+    type:
+      news: 'News'
+      ad: 'Ad'
+      post: 'Post'
+      exposition: 'Exposition'
+
     cat:
       title: 'Title'
       breed: 'Breed'

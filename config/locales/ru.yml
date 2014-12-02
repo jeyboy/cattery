@@ -18,6 +18,12 @@ ru:
     links: 'Ссылки'
 
   content:
+    type:
+      news: 'Новость'
+      ad: 'Объявление'
+      post: 'Пост'
+      exposition: 'Выставка'
+
     cat:
       title: 'Титул'
       breed: 'Порода'
