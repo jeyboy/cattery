@@ -3,7 +3,7 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat
-    @cats = @cats.where(is_kitty: params[:is_kitty]) if params.has_key?(:is_kitty)
+    @cats = @cats.includes(:father, :mother).where(is_kitty: params[:is_kitty]) if (@kitties = !!params[:is_kitty])
     @cats = @cats.where(is_cat: params[:is_cat]) if params.has_key?(:is_cat)
     @cats = @cats.paginate(page: params[:page], per_page: pagination_pre_page)
   end

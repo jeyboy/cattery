@@ -1,0 +1,12 @@
+.row
+  .large-6.medium-6.small-6.columns
+    = render 'cats/cat_without_wrapper', cat: kitty.father, album_orient: true, title_text: ' (Father)'
+  .large-6.medium-6.small-6.columns
+    = render 'cats/cat_without_wrapper', cat: kitty.mother, album_orient: true, title_text: ' (Mother)'
+
+.row
+  .large-1.medium-1.small-1.columns
+    &nbsp;
+  .large-10.medium-10.small-10.columns.end
+    = render 'cats/cat_without_wrapper', cat: kitty, album_orient: true
+%hr

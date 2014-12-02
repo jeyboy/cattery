@@ -1,4 +1,8 @@
-= render layout: 'shared/index_layout' do
-  = render partial: 'cats/cat', collection: @cats
+
+- if @kitties
+  = render partial: 'cats/kitty', collection: @cats
+- else
+  = render layout: 'shared/index_layout' do
+    = render partial: 'cats/cat', collection: @cats
 
 = render 'shared/pagination', objects: @cats

@@ -2,6 +2,11 @@
  *= require 'chosen'
 */
 
+.lined-list li{
+  clear: none !important;
+}
+
+
 .black_right_border {
   border-right: solid 2px black;
 }

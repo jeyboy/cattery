@@ -1,0 +1,30 @@
+%li.bullet-item
+  = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
+-#%li.price $99.99
+- if cat.title
+  %li.description
+    %strong #{t('content.cat.title')}:
+    = cat.title.name
+
+- if cat.breed
+  %li.bullet-item
+    %strong #{t('content.cat.breed')}:
+    = cat.breed.name
+
+- if cat.color
+  %li.bullet-item
+    %strong #{t('content.cat.color')}:
+    = cat.color.name
+
+- if cat.breeder
+  %li.bullet-item
+    %strong #{t('content.cat.breeder')}:
+    = cat.breeder
+
+- if cat.owner
+  %li.bullet-item
+    %strong #{t('content.cat.owner')}:
+    = cat.owner
+
+%li.cta-button
+  = link_to t('content.cat.fotoalbum'), gallery_path(cat_id: cat.id), class: 'text-breaker radius button'

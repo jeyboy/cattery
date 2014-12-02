@@ -1,0 +1,13 @@
+%ul.pricing-table
+  - if local_assigns[:show_controls]
+    %li.title.text-center
+      = render 'shared/control_header', object: cat, text: cat.name + local_assigns[:title_text].to_s
+  - else
+    %li.title.text-breaker= cat.name + local_assigns[:title_text].to_s
+
+  - if local_assigns[:album_orient]
+    %li.bullet-item
+      %ul.small-block-grid-1.medium-block-grid-2.lined-list
+        = render 'cats/cat_fields', cat: cat
+  - else
+    = render 'cats/cat_fields', cat: cat
