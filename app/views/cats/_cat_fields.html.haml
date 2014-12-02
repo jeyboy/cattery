@@ -1,5 +1,5 @@
 %li.bullet-item
-  = image_tag((cat.cat_picts.first.pict.url rescue PictureUploader::default_pict))
+  = image_tag((cat.cat_picts.first.pict.url(:standard) rescue PictureUploader::default_pict))
 
 - unless cat.persisted?
   %li.bullet-item
