@@ -5,6 +5,8 @@ class CatPict < ActiveRecord::Base
 
   belongs_to :cat
 
+  scope :main, -> { where(main: true) }
+
   def short_name
     "#{self.class.to_s.underscore}-#{self.created_at.to_i}"
   end

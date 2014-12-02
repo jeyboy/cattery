@@ -1,5 +1,5 @@
 %li.bullet-item
-  = image_tag((cat.cat_picts.first.pict.url(:standard) rescue PictureUploader::default_pict), height: '200')
+  = image_tag((cat.cat_picts.main.first.pict.url(:standard) rescue PictureUploader::default_pict), height: '200')
 
 - unless cat.persisted?
   %li.bullet-item
