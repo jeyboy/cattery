@@ -3,10 +3,14 @@
     = f.text_field :name, placeholder: 'Name..'
 
   = render layout: 'shared/form_field', locals: {f: f, name: :is_cat, text: 'Is male gender'} do
-    = f.check_box :is_cat
+    .switch.large.radius
+      = f.check_box :is_cat
+      = f.label :is_cat
 
   = render layout: 'shared/form_field', locals: {f: f, name: :is_kitty, text: 'Is a kitty'} do
-    = f.check_box :is_kitty
+    .switch.large.radius
+      = f.check_box :is_kitty
+      = f.label :is_kitty
 
   = render layout: 'shared/form_field', locals: {f: f, name: :breeder, text: 'Breeder'} do
     = f.text_field :breeder, placeholder: 'Breeder..'
