@@ -33,12 +33,11 @@
       .top-bar-wrapper
 
     .row.pad_bottom.pad_top
-      .large-9.medium-7.small-5.columns.no-h-padding
+      .large-10.medium-7.small-5.columns.no-h-padding
         = render 'layouts/application/locales'
-      .large-1.medium-3.small-4.columns.text-center.no-h-padding
+      .large-2.medium-5.small-7.columns.text-center.no-h-padding
         = link_to contents_url(format: 'atom') do
           = image_tag('atom.png')
-      .large-1.medium-2.small-3.columns.text-center.no-h-padding
         = link_to contents_url(format: 'rss') do
           = image_tag('rss.png')
 
