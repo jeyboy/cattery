@@ -13,7 +13,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   class << self
     def default_pict
-      'def_cat_small.png'
+      'def_cat.png'
     end
   end
 
@@ -34,11 +34,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   process :tags => ['picture']
 
   version :standard do
-    resize_to_limit(nil, 300)
+    scale(nil, 300)
   end
 
   version :thumbnail do
-    resize_to_limit(nil, 100)
+    scale(nil, 100)
   end
 
   # Process files as they are uploaded:
