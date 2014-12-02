@@ -2,7 +2,7 @@
 #= require_directory ./foundation/modules
 #= require 'chosen.jquery'
 
-#= require 'fastclick'
+# require 'fastclick'
 #= require 'jquery.cookie'
 #= require 'placeholder'
 #= require 'modernizr'
