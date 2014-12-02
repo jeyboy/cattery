@@ -1,10 +1,10 @@
 - if local_assigns[:show_all_langs]
   %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-2
-    %li
-      %p English
+    %li.black_right_border
+      %p.black_border_bottom English
       = raw content.en
-    %li
-      %p Russian
+    %li.black_left_border
+      %p.black_border_bottom Russian
       = raw content.ru
 - else
   = raw content.send(I18n.locale)#body
