@@ -11,14 +11,14 @@ body {
   background-size: cover;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
-  body {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-  }
-}
+//@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+//  body {
+//    -webkit-background-size: contain;
+//    -moz-background-size: contain;
+//    -o-background-size: contain;
+//    background-size: contain;
+//  }
+//}
 
 .content, label {
   color: #fff;
