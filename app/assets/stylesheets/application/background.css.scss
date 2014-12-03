@@ -1,0 +1,38 @@
+.content, label {
+  color: #fff !important;
+}
+
+body {
+  background: image-url('background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ul:not(.button-group) li:not(.active) a {
+  color: #7A97FE !important;
+}
+
+ul.highlighted li {
+  background-color: #666;
+  color: #fff;
+}
+
+//body::before {
+//  content: '';
+//  display: block;
+//  top: 0;
+//  left: 0;
+//  background: image-url('background.jpg') no-repeat center center fixed;
+//  width: 100%;
+//  height: 100%;
+//  position: absolute;
+//  filter: alpha(opacity=50);
+//  opacity: 0.5;
+//  z-index: -1;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+//}
