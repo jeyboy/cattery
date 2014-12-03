@@ -1,5 +1,5 @@
-.content, label {
-  color: #fff !important;
+.side-nav li:not(.active) a, .highlighted a {
+  color: #7A97FE !important;
 }
 
 body {
@@ -10,8 +10,8 @@ body {
   background-size: cover;
 }
 
-ul:not(.button-group) li:not(.active) a {
-  color: #7A97FE !important;
+.content, label {
+  color: #fff;
 }
 
 ul.highlighted li {
