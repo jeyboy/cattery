@@ -1,7 +1,7 @@
 %ul.pricing-table
   - if local_assigns[:show_controls]
     %li.title.text-center
-      = render 'shared/control_header', object: content, text: content.name
+      = render 'shared/control_header', object: content, text: "<div> eng: #{content.name}</div><hr><div>rus: #{content.ru_name}</div>"
   - else
     %li.title.text-breaker
       .row
@@ -10,7 +10,7 @@
             = t("content.type.#{content.content_type}")
         .large-10.medium-9.small-7.columns
           = link_to content_path(content) do
-            = content.name
+            = I18n.locale == :en ? content.name : content.ru_name
 
   %li.margined.text-breaker
     = render partial: 'contents/content_body', locals: {content: content, show_all_langs: local_assigns[:show_all_langs]}

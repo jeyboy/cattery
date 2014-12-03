@@ -5,6 +5,10 @@
   = render layout: 'shared/form_field', locals: {f: f, name: :name} do
     = f.text_field :name, placeholder: 'Name..'
 
+  - unless f.object.static?
+    = render layout: 'shared/form_field', locals: {f: f, name: :ru_name} do
+      = f.text_field :ru_name, placeholder: 'Russian Name..'
+
   = render layout: 'shared/form_field', locals: {f: f, name: :body} do
     = render partial: 'shared/editor', locals: {f: f}
 
