@@ -13,10 +13,10 @@ body {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
   body {
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
   }
 }
 
