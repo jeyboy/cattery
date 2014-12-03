@@ -3,7 +3,7 @@
     = image_tag 'edit-icon-small.png'
 
 = content_for :control_title, flush: true do
-  = text
+  != text
 
 - unless local_assigns.has_key?(:no_delete_button)
   = content_for :control_delete_button, flush: true do

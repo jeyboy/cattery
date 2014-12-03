@@ -55,7 +55,7 @@ private
 
   def content_params
     params.require(:content).permit(
-        :id, :name, :en, :ru, :content_type,
+        :id, :name, :ru_name, :en, :ru, :content_type,
         content_picts_attributes: [:id, :pict, :pict_cache, :_destroy])
   end
 end
