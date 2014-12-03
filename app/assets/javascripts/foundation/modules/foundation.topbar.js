@@ -332,7 +332,7 @@
     },
 
     breakpoint : function () {
-      return !matchMedia(Foundation.media_queries['topbar']).matches;
+      return !matchMedia(Foundation.media_queries['topbar']).matches || this.small() || this.medium();
     },
 
     small : function () {
