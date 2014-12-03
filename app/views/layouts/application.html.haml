@@ -16,7 +16,7 @@
 
     .show-for-small-only
       .fixed
-        %nav.top-bar{'data-topbar' => '', role: 'navigation'}
+        %nav.top-bar{data: {topbar: ''}, role: 'navigation', }
           %ul.title-area
             %li.ico= image_tag 'ico_small.png'
             / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
@@ -88,4 +88,4 @@
             +38050-901-1812
 
     :javascript
-      $(document).foundation();
+      $(document).foundation('topbar', {scrolltop: false});
