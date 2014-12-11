@@ -1,6 +1,6 @@
-%h1= @content.name
+%h1= I18n.locale == :en ? @content.name : @content.ru_name
 
-!= @content.body
+= render(partial: 'contents/content_body', locals: {content: @content})
 
 - if @content.content_picts.present?
   %hr
